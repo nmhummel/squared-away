@@ -20,3 +20,58 @@ function fetchScores() {
 // create - new score
 
 // update - update score whe repeating a board
+
+const canvas = document.getElementById('canvas1');
+const context = canvas.getContext('2d');
+canvas.width = 500;
+canvas.height = 600;
+
+// global variables
+const cellSize = 100;
+const cellGap = 0;
+const gameGrid = [];
+
+//game board
+const controlSquare = {
+    width: cellSize,
+    height: cellSize,
+}
+
+class Cell {
+    constructor(x,y) {
+        this.x = x;
+        this.y = y;
+        this.width = cellSize;
+        this.height = cellSize;
+    }
+    draw() {
+        context.strokeStyle = "black";
+        context.strokeRect(this.x, this.y, this.width, this.height);
+    }
+}
+
+function createGrid() {
+    for (let y = cellSize; y < canvas.height; y += cellSize) {
+        for (let x = 0; x < canvas.width; x += cellSize) {
+            gameGrid.push(new Cell(x,y));
+        }
+    }
+}
+createGrid();
+console.log(gameGrid);
+
+function handleGameGrid() {
+    for (let i = 0; i < gameGrid.length; i++) {
+        gameGrid[i].draw();
+    }
+}
+handleGameGrid();  
+
+
+// function animate() {
+//     context.fillStyle = "blue";
+//     context.fillRect(0,0, controlSquare.width, controlSquare.height);
+//     requestAnimationFrame(animate);
+// }
+
+// animate();
