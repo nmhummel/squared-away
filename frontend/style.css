@@ -4,6 +4,10 @@
 
 body {
     background: black;
+    background-image: url("images/exterminate.jpg");
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: bottom;
 }
 
 .floor {
@@ -12,12 +16,12 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: "exterminate.jpg"
 }
+
 #canvas1 {
     background: white;
     position: absolute;
-    top: 50%;
+    top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 500px;
