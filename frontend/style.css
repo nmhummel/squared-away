@@ -8,6 +8,7 @@ body {
     background-repeat: no-repeat;
     background-position-x: center;
     background-position-y: bottom;
+    background-size: auto auto;
 }
 
 .floor {
@@ -19,9 +20,9 @@ body {
 }
 
 #canvas1 {
-    background: white;
+    background: #003B6F;
     position: absolute;
-    top: 40%;
+    top: 35%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 500px;

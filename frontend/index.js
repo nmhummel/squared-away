@@ -1,6 +1,7 @@
 
 document.addEventListener("DOMContentLoaded", () => {
-     fetchScores()
+    fetchScores()
+    //fetchBoards()
 })
 
 const BASE_URL = 'http://localhost:3000'
@@ -18,13 +19,25 @@ function fetchScores() {
     )
 }
 // create - new score
+// update - update score when repeating a board
 
-// update - update score whe repeating a board
-
+//create board
 const canvas = document.getElementById('canvas1');
 const context = canvas.getContext('2d');
 canvas.width = 500;
 canvas.height = 600;
+
+// player avatar assignment
+const upMove = new Image(); // Create new img element
+upMove.src = 'd-up.png'; // Set source path
+const downMove = new Image(); 
+downMove.src = 'd-down.png'; 
+const rightMove = new Image(); 
+rightMove.src = 'd-right.png'; 
+const leftMove = new Image(); 
+leftMove.src = 'd-left.png'; 
+
+ 
 
 // global variables
 const cellSize = 100;
