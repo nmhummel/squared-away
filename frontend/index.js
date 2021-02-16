@@ -1,27 +1,27 @@
 
 document.addEventListener("DOMContentLoaded", () => {
-    fetchBoards()
-    createScoreboard()
+    fetchBoards();
+    createScoreboard();
+    sortScores();
     //showBoards
 })
  
 // //create board
-// const gameBoard = document.getElementById('gameBoard');
-// //const context = gameBoard.getContext('2d');
-//     gameBoard.width = 500;
-//     gameBoard.height = 500;
-// const cellSize = 100;
-// //const cellGap = 0;
-// //const gameGrid = [];
+
 
 const BASE_URL = 'http://localhost:3000'
 const player = document.getElementById('player');
+const boardChoices = document.getElementById('board-container');
+const scoreBoard = document.getElementById("score-container");
 const gameBoard = document.getElementById('gameBoard');
-gameBoard.width = 500;
-gameBoard.height = 500;
+   gameBoard.width = 500;
+   gameBoard.height = 500;
 
 const cellSize = 100;
 const gameGrid = [];
+
+// const tardisCard = new Image(95, 95);
+//     tardisCard = "tardis-icon";
 
 class Cell {
     constructor(x,y,counter) {
@@ -108,22 +108,3 @@ function movePlayerUp() {
     }
 }
 
-// function handleGameGrid() {
-//     for (let i = 0; i < gameGrid.length; i++) {
-//         gameGrid[i].draw();
-//     }
-// }
-// handleGameGrid(); 
-
-
-// player avatar assignment
-// const upMove = new Image(); // Create new img element
-//     upMove.src = 'd-up.png'; // Set source path
-// const downMove = new Image(); 
-//     downMove.src = 'd-down.png'; 
-// const rightMove = new Image(); 
-//     rightMove.src = 'd-right.png'; 
-// const leftMove = new Image(); 
-//     leftMove.src = 'd-left.png'; 
-// const tardisCard = new Image(95, 95);
-//     tardisCard = "tardis-icon";

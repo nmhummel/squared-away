@@ -19,15 +19,21 @@ class Score {
             for (const score of scores) {
                 let s = new Score(score.id, score.moves, score.username, score.board_id)
                 s.createScoreboard()
+                s.sortScores()
             }
         })
         .catch((error) => { console.log(error.message) })
     }
 
     createScoreboard() {
-        const scoreboard = document.getElementById("score-container")
-        scoreboard.innerHTML = "Top Scores"
+     
 
+    }
+
+    static sortScores = () => {
+        Score.allScores.sort(function(a,b) {
+            return a.moves - b.moves
+        })
     }
 
 }

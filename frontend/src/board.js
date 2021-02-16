@@ -1,31 +1,49 @@
 class Board {
+
+    static allBoards = []
+    static gameBoard = document.getElementById('gameBoard')
+    
     constructor(id, discolored) {
         this.id = id
         this.discolored = discolored
+        Board.allBoards.push(this)
     }
-
-
-    fetchBoards() {
-        fetch(`${BASE_URL}/boards`)
-        .then(resp => resp.json())
-        .then(boards => {
-            for (const board of boards) {
-                let b = new Board(board.id, board.discolored)
-            }
-        }
-        )
-    }
-
+    
     renderBoard(){
         // iterate over all cells and determine which color it should be
     }
-// use split to get array of discolored sqaures
+    // use split to get array of discolored squares
 
-    showBoards() {
-        
+   //  show list of boards to choose from
+    static sortBoard = () => {
+        Board.allBoards.sort(function(a,b) {
+            return a.id - b.id
+        })
     }
 
-}
 
-// displaying scores
-// in board constructor, keep track of all
+    addToDom(){
+        Board.gameBoard.append(this.renderBoard())
+    }
+
+    setActiveBoard = (e) => {
+        let filteredBoard 
+        Board.all.forEach(c => {
+            if(c.element === this.element && !this.active){
+                c.element.classList.add('activated')
+                c.active = true
+                filteredBoard = c
+            }else{
+                c.element.classList.remove('activated')
+                c.active = false
+            }
+
+            Item.filterByBoard(filteredBoard)
+        }) 
+    }
+
+
+    
+
+
+}
