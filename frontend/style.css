@@ -11,25 +11,7 @@ body {
     background-size: auto auto;
 }
 
-/* .floor {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
 
-
-#canvas1 {
-    background: #003B6F;
-    position: absolute;
-    top: 35%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 500px;
-    height: 600px;
-    overflow: hidden;
-}
-}*/
 
 #gameBoard {
     background-color: #003B6F;
@@ -47,8 +29,8 @@ body {
 
 #player {
     position: absolute;
-    height: 100px;
-    width: 100px;
+    height: initial;
+    width: initial;
     outline: 1px dotted red;
     left: 0;
 }
@@ -58,7 +40,13 @@ body {
   }
   
 
- 
+ .floor {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
  
   
   .rock {
