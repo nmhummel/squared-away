@@ -3,21 +3,6 @@
    
 //     //fetchBoards()
 // })
-
-
-
-// player avatar assignment
-// const upMove = new Image(); // Create new img element
-//     upMove.src = 'd-up.png'; // Set source path
-// const downMove = new Image(); 
-//     downMove.src = 'd-down.png'; 
-// const rightMove = new Image(); 
-//     rightMove.src = 'd-right.png'; 
-// const leftMove = new Image(); 
-//     leftMove.src = 'd-left.png'; 
-// const tardisCard = new Image(95, 95);
-//     tardisCard = "tardis-icon";
-
  
 // //create board
 // const gameBoard = document.getElementById('gameBoard');
@@ -27,7 +12,7 @@
 // const cellSize = 100;
 // //const cellGap = 0;
 // //const gameGrid = [];
-
+const BASE_URL = 'http://localhost:3000'
 const player = document.getElementById('player');
 const gameBoard = document.getElementById('gameBoard');
 gameBoard.width = 500;
@@ -55,7 +40,7 @@ let playerTop = 0;
 
 function movePlayerRight() {
     playerLeft += 100;
-    player.src = "images/d-right.png"
+    player.src = "images/100-right.png"
     player.style.left = playerLeft + 'px';
     if (playerLeft >= 400) {
         playerLeft -= 100;
@@ -64,7 +49,7 @@ function movePlayerRight() {
 
 function movePlayerLeft() {
     playerLeft -= 100;
-    player.src = "images/d-left.png"
+    player.src = "images/100-left.png"
     player.style.left = playerLeft + 'px';
     if (playerLeft < 0) {
         playerLeft += 100
@@ -73,7 +58,7 @@ function movePlayerLeft() {
 
 function movePlayerDown() {
     playerTop += 100;
-    player.src = "images/d-down.png"
+    player.src = "images/100-down.png"
     player.style.top = playerTop + 'px';
     if (playerTop >= 400) {
         playerTop -=100;
@@ -82,7 +67,7 @@ function movePlayerDown() {
 
 function movePlayerUp() {
     playerTop -= 100;
-    player.src = "images/d-up.png"
+    player.src = "images/100-up.png"
     player.style.top = playerTop + 'px';
     if (playerTop <=0) {
         playerTop += 100;
@@ -99,10 +84,11 @@ class Cell {
         this.width = cellSize;
         this.height = cellSize;
     }
-    draw() {
-        //gameBoard.strokeStyle = "white";
-        //gameBoard.strokeRect(this.x, this.y, this.width, this.height);
-    }
+    
+    // draw() {
+    //     //gameBoard.strokeStyle = "white";
+    //     //gameBoard.strokeRect(this.x, this.y, this.width, this.height);
+    // }
 }
 
 function createGrid() {
@@ -121,3 +107,16 @@ console.log(gameGrid);
 //     }
 // }
 // handleGameGrid(); 
+
+
+// player avatar assignment
+// const upMove = new Image(); // Create new img element
+//     upMove.src = 'd-up.png'; // Set source path
+// const downMove = new Image(); 
+//     downMove.src = 'd-down.png'; 
+// const rightMove = new Image(); 
+//     rightMove.src = 'd-right.png'; 
+// const leftMove = new Image(); 
+//     leftMove.src = 'd-left.png'; 
+// const tardisCard = new Image(95, 95);
+//     tardisCard = "tardis-icon";

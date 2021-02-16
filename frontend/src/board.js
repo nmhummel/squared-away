@@ -5,12 +5,20 @@ class Board {
     }
 
 
+    fetchScores() {
+        fetch(`${BASE_URL}/boards`)
+        .then(resp => resp.json())
+        .then(boards => {
+            for (const board of boards) {
+                let b = new Board(board.id, board.discolored)
+            }
+        }
+        )
+    }
 
 
 
 
 
 
-
-    
 }

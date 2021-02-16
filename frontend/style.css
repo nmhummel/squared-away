@@ -1,5 +1,7 @@
 * {
-    box-sizing: content-box;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 }
 
 body {
@@ -10,8 +12,6 @@ body {
     background-position-y: bottom;
     background-size: auto auto;
 }
-
-
 
 #gameBoard {
     background-color: #003B6F;
@@ -25,8 +25,6 @@ body {
     transform: translate(-50%, -50%);
 }
 
-
-
 #player {
     position: absolute;
     height: initial;
@@ -34,6 +32,13 @@ body {
     outline: 1px dotted red;
     left: 0;
 }
+
+
+
+
+
+
+
 
 /*
   .d-down .d-up .d-right .d-left {
@@ -48,35 +53,4 @@ body {
     height: 100%;
 }
  
-  
-  .rock {
-    width: 20px;
-    height: 20px;
-    background: tan;
-    position: absolute;
-  }
-  
-  .rock:before {
-    content: "";
-    border-bottom: 6px solid tan;
-    border-left: 6px solid #111;
-    border-right: 6px solid #111;
-    height: 0;
-    left: 0;
-    position: absolute;
-    top: 0;
-    width: 9px;
-  }
-  
-  .rock:after {
-    content: "";
-    border-left: 6px solid #111;
-    border-right: 6px solid #111;
-    border-top: 6px solid tan;
-    bottom: 0;
-    height: 0;
-    left: 0;
-    position: absolute;
-    width: 9px;
-  }
   */ 
