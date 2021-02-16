@@ -3,4 +3,14 @@ class Board {
         this.id = id
         this.discolored = discolored
     }
+
+
+
+
+
+
+
+
+
+    
 }

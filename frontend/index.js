@@ -1,8 +1,8 @@
 
-document.addEventListener("DOMContentLoaded", () => {
+// document.addEventListener("DOMContentLoaded", () => {
    
-    //fetchBoards()
-})
+//     //fetchBoards()
+// })
 
 
 
@@ -28,54 +28,56 @@ document.addEventListener("DOMContentLoaded", () => {
 // //const cellGap = 0;
 // //const gameGrid = [];
 
-const dalek = document.getElementById('dalek');
+const player = document.getElementById('player');
 const gameBoard = document.getElementById('gameBoard');
 
-let dalekLeft = 0;
-let dalekTop = 0;
-
-document.addEventListener("keydown", function(e) {
+document.addEventListener("keyup", function(e) {
     if (e.key === "ArrowLeft") {
-        moveDalekLeft();
+        movePlayerLeft();
     }
     else if (e.key === "ArrowRight") {
-        moveDalekRight();
+        movePlayerRight();
     }
     else if (e.key === "ArrowDown") {
-        moveDalekDown();
+        movePlayerDown();
     }
     else if (e.key === "ArrowUp") {
-        moveDalekUp();
-  }); 
+        movePlayerUp();
+    }
+})
 
-function moveDalekLeft() {
-    dalekLeft -= 100;
-    dalek.style.left = dalekLeft + 'px';
-    if (dalekLeft <= 0) {
-        dalekLeft += 100
+let playerLeft = 0;
+let playerTop = 0;
+
+
+function movePlayerRight() {
+    playerLeft += 100;
+    player.style.left = playerLeft + 'px';
+    if (playerLeft >= 400) {
+        playerLeft -= 100;
+    }
+}
+
+function movePlayerLeft() {
+    playerLeft -= 100;
+    player.style.left = playerLeft + 'px';
+    if (playerLeft < 0) {
+        playerLeft += 100
     }
 } 
 
-function moveDalekRight() {
-    dalekLeft += 100;
-    dalek.style.left = dalekLeft + 'px';
-    if (dalekLeft >= 400) {
-        dalekLeft -= 100;
+function movePlayerDown() {
+    playerTop += 100;
+    player.style.top = playerTop + 'px';
+    if (playerTop >= 400) {
+        playerTop -=100;
     }
 }
 
-function moveDalekDown() {
-    dalekTop += 100;
-    dalek.style.top = dalekTop + 'px';
-    if (dalekTop >= 500) {
-        dalekTop -=100;
+function movePlayerUp() {
+    playerTop -= 100;
+    player.style.top = playerTop + 'px';
+    if (playerTop <=0) {
+        playerTop += 100;
     }
-}
-
-function moveDalekUp() {
-    dalekTop -= 100;
-    dalek.style.top = dalekTop + 'px'
-    if (dalekTop <=0) {
-        dalekTop += 100;
-    } 
 }

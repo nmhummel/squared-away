@@ -34,7 +34,7 @@ body {
 #gameBoard {
     background-color: #003B6F;
     width: 500px;
-    height: 600px;
+    height: 500px;
     outline: 2px solid white;
     overflow: hidden;
     position: relative;
@@ -45,9 +45,11 @@ body {
 
 
 
-#dalek {
+#player {
     position: absolute;
-    height: 90px;
+    height: 100px;
+    width: 100px;
+    outline: 1px dotted red;
     left: 0;
 }
 
