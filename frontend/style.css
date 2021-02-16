@@ -1,5 +1,5 @@
 * {
-    box-sizing: border-box;
+    box-sizing: content-box;
 }
 
 body {
@@ -11,13 +11,13 @@ body {
     background-size: auto auto;
 }
 
-.floor {
+/* .floor {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-}
+
 
 #canvas1 {
     background: #003B6F;
@@ -27,5 +27,66 @@ body {
     transform: translate(-50%, -50%);
     width: 500px;
     height: 600px;
-
+    overflow: hidden;
 }
+}*/
+
+#gameBoard {
+    background-color: #003B6F;
+    width: 500px;
+    height: 600px;
+    outline: 2px solid white;
+    overflow: hidden;
+    position: relative;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+
+#dalek {
+    position: absolute;
+    height: 90px;
+    left: 0;
+}
+
+/*
+  .d-down .d-up .d-right .d-left {
+  }
+  
+
+ 
+ 
+  
+  .rock {
+    width: 20px;
+    height: 20px;
+    background: tan;
+    position: absolute;
+  }
+  
+  .rock:before {
+    content: "";
+    border-bottom: 6px solid tan;
+    border-left: 6px solid #111;
+    border-right: 6px solid #111;
+    height: 0;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 9px;
+  }
+  
+  .rock:after {
+    content: "";
+    border-left: 6px solid #111;
+    border-right: 6px solid #111;
+    border-top: 6px solid tan;
+    bottom: 0;
+    height: 0;
+    left: 0;
+    position: absolute;
+    width: 9px;
+  }
+  */ 
