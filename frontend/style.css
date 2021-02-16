@@ -13,6 +13,7 @@ body {
     background-size: auto auto;
 }
 
+/* overall container */
 #gameBoard {
     flex: content;
     background-color: #003B6F;
@@ -26,6 +27,7 @@ body {
     transform: translate(-50%, -50%);
 }
 
+/* character piece */
 #player {
     position: absolute;
     height: initial;

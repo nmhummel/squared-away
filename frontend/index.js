@@ -23,11 +23,12 @@ const cellSize = 100;
 const gameGrid = [];
 
 class Cell {
-    constructor(x,y) {
+    constructor(x,y,counter) {
         this.x = x;
         this.y = y;
         this.width = cellSize;
         this.height = cellSize;
+        this.element = document.getElementById(`cell${counter}`)
     }
     
 
@@ -45,9 +46,11 @@ class Cell {
 // if cell # is in API for board, change color tile
 
 function createGrid() {
+    let counter = 1;
     for (let y = cellSize; y < gameBoard.height; y += cellSize) {
         for (let x = 0; x < gameBoard.width; x += cellSize) {
-            gameGrid.push(new Cell(x,y).createElement('div'));
+            gameGrid.push(new Cell(x,y,counter));
+            counter++;
         }
     }
 }
@@ -86,24 +89,21 @@ function movePlayerLeft() {
         playerLeft -= 100;
         player.style.left = playerLeft + 'px'; 
     }
-    // check for reasonable bounds
 } 
 
 function movePlayerDown() {
     player.src = "images/100-down.png"
-    playerTop += 100;
-    player.style.top = playerTop + 'px';
-    if (playerTop >= 500) {
-        playerTop = 0;
+    if (playerTop < 400) {
+        playerTop += 100;
+        player.style.top = playerTop + 'px';
     }
 }
 
 function movePlayerUp() {
     player.src = "images/100-up.png"
-    playerTop -= 100;
-    player.style.top = playerTop + 'px';
-    if (playerTop < 0) {
-        playerTop += 100;
+    if (playerTop > 0) {
+        playerTop -= 100;
+        player.style.top = playerTop + 'px';
     }
 }
 

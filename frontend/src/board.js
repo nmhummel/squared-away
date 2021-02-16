@@ -5,7 +5,7 @@ class Board {
     }
 
 
-    fetchScores() {
+    fetchBoards() {
         fetch(`${BASE_URL}/boards`)
         .then(resp => resp.json())
         .then(boards => {
@@ -16,9 +16,14 @@ class Board {
         )
     }
 
-
+    renderBoard(){
+        // iterate over all cells and determine which color it should be
+    }
 // use split to get array of discolored sqaures
 
 
 
 }
+
+// displaying scores
+// in board constructor, keep track of all
