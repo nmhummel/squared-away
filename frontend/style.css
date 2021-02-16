@@ -13,18 +13,63 @@ body {
     background-size: auto auto;
 }
 
-/* overall container */
+#intro-text {
+    color:darkgray;
+    font-family: fantasy;
+    font-size: 35px;
+    text-align: center;
+}
+
+/* parent flex box */
+#all-boxes {
+    display: flex;
+    flex-flow: row nowrap;
+    height: 500px;    
+    justify-content: center;
+    align-items: stretch;
+    align-content: center;
+    top:40%;
+}
+
+
+/* game board container */
 #gameBoard {
-    flex: content;
-    background-color: #003B6F;
     width: 500px;
     height: 500px;
-    outline: 2px solid white;
+    margin: 50px 50px 50px 50px;
     overflow: hidden;
     position: relative;
-    top: 35%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    top: 40%;
+    align-self: center;
+    background-color: #003B6F;
+    outline: 2px solid white;
+}
+
+/* scoreboard */
+#score-container  {
+    width: 300px;
+    height: 500px;
+    margin: 50px 50px 50px 50px;
+    align-self: center;
+    background-color: lightslategrey;
+    overflow: hidden;
+    position: relative;
+    top: 40%;
+    outline: 2px solid white;
+    color: darkred;
+}
+
+/* board choices laid out */
+#board-container {
+    width: 300px;
+    height: 500px;
+    margin: 50px 50px 50px 50px;
+    align-self: center;
+    background-color: lightslategrey;
+    overflow: hidden;
+    position: relative;
+    top: 40%;
+    outline: 2px solid white;
 }
 
 /* character piece */
@@ -35,9 +80,6 @@ body {
     outline: 1px dotted red;
     left: 0;
 }
-
-
-
 
 
 

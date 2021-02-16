@@ -21,7 +21,9 @@ class Board {
     }
 // use split to get array of discolored sqaures
 
-
+    showBoards() {
+        
+    }
 
 }
 

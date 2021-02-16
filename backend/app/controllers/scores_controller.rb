@@ -2,15 +2,16 @@ class ScoresController < ApplicationController
   before_action :set_score, only: [:show, :update, :destroy]
 
   # GET /scores
+  
   def index
-    @scores = Score.all
-
-    render json: @scores
+    scores = Score.all
+    render json: scores.to_json(except: [:created_at, :updated_at] ) 
   end
 
   # GET /scores/1
   def show
-    render json: @score
+    score = Score.find(params[:id])
+    render json: score.to_json(except: [:created_at, :updated_at])  
   end
 
   # POST /scores

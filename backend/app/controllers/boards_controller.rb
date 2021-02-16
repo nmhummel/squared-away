@@ -3,9 +3,9 @@ class BoardsController < ApplicationController
 
   # GET /boards
   def index
-    @boards = Board.all
-
-    render json: @boards
+    boards = Board.all
+    #render json: BoardSerializer.new(boards)
+    render json: boards.to_json(except: [:created_at, :updated_at] ) #, include: {board: {only: [:moves, :username]} }
   end
 
   # GET /boards/1

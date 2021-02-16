@@ -1,8 +1,9 @@
 
-// document.addEventListener("DOMContentLoaded", () => {
-   
-//     //fetchBoards()
-// })
+document.addEventListener("DOMContentLoaded", () => {
+    fetchBoards()
+    createScoreboard()
+    //showBoards
+})
  
 // //create board
 // const gameBoard = document.getElementById('gameBoard');
