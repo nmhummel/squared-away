@@ -12,12 +12,47 @@
 // const cellSize = 100;
 // //const cellGap = 0;
 // //const gameGrid = [];
+
 const BASE_URL = 'http://localhost:3000'
 const player = document.getElementById('player');
 const gameBoard = document.getElementById('gameBoard');
 gameBoard.width = 500;
 gameBoard.height = 500;
 
+const cellSize = 100;
+const gameGrid = [];
+
+class Cell {
+    constructor(x,y) {
+        this.x = x;
+        this.y = y;
+        this.width = cellSize;
+        this.height = cellSize;
+    }
+    
+
+}
+
+// function createDivs() {
+//     const cell = document.createElement('div')
+    
+// }
+// each cell as it's own div element, all the same size - display: block inside divs
+// gameboard div is container
+// flex grid gameboard container
+// class called game for gameGrid - for making new game 
+
+// if cell # is in API for board, change color tile
+
+function createGrid() {
+    for (let y = cellSize; y < gameBoard.height; y += cellSize) {
+        for (let x = 0; x < gameBoard.width; x += cellSize) {
+            gameGrid.push(new Cell(x,y).createElement('div'));
+        }
+    }
+}
+createGrid();
+console.log(gameGrid);
 
 document.addEventListener("keyup", function(e) {
     if (e.key === "ArrowLeft") {
@@ -37,69 +72,40 @@ document.addEventListener("keyup", function(e) {
 let playerLeft = 0;
 let playerTop = 0;
 
-
 function movePlayerRight() {
-    playerLeft += 100;
     player.src = "images/100-right.png"
-    player.style.left = playerLeft + 'px';
-    if (playerLeft >= 400) {
-        playerLeft -= 100;
+    if (playerLeft < 400) {
+        playerLeft += 100;
+        player.style.left = playerLeft + 'px';
     }
 }
 
 function movePlayerLeft() {
-    playerLeft -= 100;
     player.src = "images/100-left.png"
-    player.style.left = playerLeft + 'px';
-    if (playerLeft < 0) {
-        playerLeft += 100
+    if (playerLeft > 0) {
+        playerLeft -= 100;
+        player.style.left = playerLeft + 'px'; 
     }
+    // check for reasonable bounds
 } 
 
 function movePlayerDown() {
-    playerTop += 100;
     player.src = "images/100-down.png"
+    playerTop += 100;
     player.style.top = playerTop + 'px';
-    if (playerTop >= 400) {
-        playerTop -=100;
+    if (playerTop >= 500) {
+        playerTop = 0;
     }
 }
 
 function movePlayerUp() {
-    playerTop -= 100;
     player.src = "images/100-up.png"
+    playerTop -= 100;
     player.style.top = playerTop + 'px';
-    if (playerTop <=0) {
+    if (playerTop < 0) {
         playerTop += 100;
     }
 }
-
-const cellSize = 100;
-const gameGrid = [];
-
-class Cell {
-    constructor(x,y) {
-        this.x = x;
-        this.y = y;
-        this.width = cellSize;
-        this.height = cellSize;
-    }
-    
-    // draw() {
-    //     //gameBoard.strokeStyle = "white";
-    //     //gameBoard.strokeRect(this.x, this.y, this.width, this.height);
-    // }
-}
-
-function createGrid() {
-    for (let y = cellSize; y < gameBoard.height; y += cellSize) {
-        for (let x = 0; x < gameBoard.width; x += cellSize) {
-            gameGrid.push(new Cell(x,y));
-        }
-    }
-}
-createGrid();
-console.log(gameGrid);
 
 // function handleGameGrid() {
 //     for (let i = 0; i < gameGrid.length; i++) {
