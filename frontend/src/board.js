@@ -23,7 +23,7 @@ class Board {
 
     renderList() {
         this.element.innerHTML = `Board #${this.id}`
-        this.element.id = `board-${this.id}`
+        this.element.id = `board-${this.id}` 
         return this.element
     }
 

@@ -13,16 +13,6 @@ body {
     background-size: auto auto;
 }
 
-/* #canvas {
-    border: 1px solid white;
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 500px;
-    height: 500px;
-} */
-
 .light-text {
     color:darkgray;
     font-family: fantasy;
@@ -36,6 +26,9 @@ body {
     font-family: fantasy;
     font-size: 35px;
     text-align: center;
+    position:sticky;
+    top: 0;
+    background-color: lightslategrey;
 }
 
 /* parent flex box */
@@ -46,29 +39,36 @@ body {
     justify-content: center;
     align-items: stretch;
     align-content: center;
-    top:30%;
+    top: 20%;
+    position: static;
 }
 
+.row1 .row2 .row3 .row4 .row5 {
+    display: flex;
+}
+
+.allCells {
+    flex: 1;
+    border: 1px dotted darkred;
+    height: 100px;
+    width: 100px;
+}
 
 /* game board container background-color: #003B6F;*/
 #gameBoard {
     display: flex;
     flex-wrap: nowrap;
+    overflow: hidden;
+    position: relative;
+    align-self: center;
     width: 500px;
     height: 500px;
     margin: 50px 50px 50px 50px;
-    overflow: hidden;
-    position: relative;
-    top: 30%;
-    align-self: center;
+    top: 20%;
     outline: 4px solid white;
 }
 
-.allCells {
-    border: 1px dotted darkred;
-    height: 100px;
-    width: 100px;
-}
+
 /* scoreboard */
 #score-container  {
     width: 300px;
@@ -78,7 +78,7 @@ body {
     background-color: lightslategrey;
     overflow: hidden;
     position: relative;
-    top: 30%;
+    top: 20%;
     outline: 4px solid white;
     color: darkred;
     overflow-y: auto;
@@ -94,7 +94,7 @@ body {
     background-color: lightslategrey;
     overflow: hidden;
     position: relative;
-    top: 30%;
+    top: 20%;
     outline: 4px solid white;
     align-content: center;
     overflow-y: scroll;

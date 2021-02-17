@@ -1,13 +1,9 @@
-
 // document.addEventListener("DOMContentLoaded", () => {
 //     //fetchBoards();
 //     createScoreboard();
 //     sortScores();
 //     //showBoards
 // })
- 
-// //create board
-
 
 const BASE_URL = 'http://localhost:3000'
 const player = document.getElementById('player');
@@ -16,7 +12,6 @@ const boardList = document.getElementById('board-container');
 const gameBoard = document.getElementById('gameBoard');
    gameBoard.width = 500;
    gameBoard.height = 500;
-
 const cellSize = 100;
 const gameGrid = [];
 
@@ -30,15 +25,18 @@ class Cell {
         this.width = cellSize;
         this.height = cellSize;
         this.element = document.getElementById(`cell${counter}`)
-        //this.element.style.position = "relative" - utilize x/y
+        this.element.style.position = "relative" //- utilize x/y
     }
 
+    // static renderElements = () =>{
+    //     this.element.className = "allCells"
+    // }
 }
 
 // function createDivs() {
 //     const cell = document.createElement('div')
-    
 // }
+
 // each cell as it's own div element, all the same size - display: block inside divs
 // gameboard div is container
 // flex grid gameboard container
@@ -47,12 +45,13 @@ class Cell {
 // if cell # is in API for board, change color tile
 
 function createGrid() {
-    let counter = 0;
+    let counter = 1;
     for (let y = cellSize; y < gameBoard.height; y += cellSize) {
         for (let x = 0; x < gameBoard.width; x += cellSize) {
-            gameGrid.push(new Cell(x,y,counter));
+            gameGrid.push(new Cell(x,y, counter));
             counter++;
-        }
+         }
+        //debugger
     }
 }
 createGrid();
