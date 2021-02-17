@@ -9,17 +9,14 @@ class BoardApi {
         .then(resp => resp.json())
         .then(boards => createBoardList(boards))         
     }
-
 }
 
 function createBoardList(boards){
     //debugger    
     let bs = boards.sort((a,b) => { a.id - b.id } )
     bs.forEach(element => {   
-        new Board(element.id, element.discolored)
-        // let listItem = document.createElement("li")
-        // listItem.innerHTML = element.id
-        // boardChoices.appendChild(listItem)
+        let b = new Board(element.id, element.discolored)
+        b.addToDom()
         })
 }
 

@@ -2,25 +2,21 @@ class Score {
 
     static allScores = []
 
-    constructor({id, moves, username, board_id}) {
+    constructor(id, moves, username, board_id) {
         this.id = id
         this.moves = moves
         this.username = username
         this.board_id = board_id
         Score.allScores.push(this)
         console.log(this)
+        this.element = document.createElement('li')
+        this.element.className = `side-list`
+        this.element.innerHTML = `${moves}<br>${username}<br>`
+        scoreList.appendChild(this.element)
     }
 
     // const scoreList = document.getElementById("score-container");
-    renderScoreList() {
-        scoreList.innerHTML +=
-        `<ul class="side-list">
-          <li>
-            <h3>${this.moves}</h3>
-            ${this.username}<br>
-          </li><br>
-        </ul>`
-    }
+
 
     static sortScores = () => {
         Score.allScores.sort(function(a,b) {

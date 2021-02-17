@@ -6,18 +6,23 @@ class ScoreApi {
     //const BASE_URL = 'http://localhost:3000'
     // read - scoreboard (scores, username)
     getScores() {
-        fetch(`${BASE_URL}/scores`)
+        fetch(this.baseUrl)
         .then(resp => resp.json())
-        .then(scores => {
-            for (const score of scores) {
-                let s = new Score(score.id, score.moves, score.username, score.board_id)
-                s.renderScoreList() 
-                //s.sortScores()
-            }
-        })
-        .catch((error) => { console.log(error.message) })
+        .then(scores => createScoreList(scores))
+        //.catch((error) => { console.log(error.message) })
     }
 }
-        
+
+function createScoreList(scores){
+    //debugger    
+    let ss = scores.sort((a,b) => { a.moves - b.moves } )
+    ss.forEach(element => {   
+        new Score(element.id, element.moves, element.username, element.board_id)
+    })
+}
+
+ 
+   
 const scoreApi = new ScoreApi(BASE_URL)
 scoreApi.getScores();
+
