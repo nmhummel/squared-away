@@ -15,7 +15,7 @@ class ScoreApi {
 
 function createScoreList(scores){
     //debugger    
-    let ss = scores.sort((a,b) => { a.moves - b.moves } )
+    let ss = scores.sort((a,b) => { return a.moves - b.moves } )
     ss.forEach(element => {   
         new Score(element.id, element.moves, element.username, element.board_id)
     })

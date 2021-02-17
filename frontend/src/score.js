@@ -11,17 +11,18 @@ class Score {
         console.log(this)
         this.element = document.createElement('li')
         this.element.className = `side-list`
-        this.element.innerHTML = `${moves}<br>${username}<br>`
+        this.element.innerHTML = `<br><b>${moves}</b> by <i>${username}</i> on Board #${board_id}<br>`
         scoreList.appendChild(this.element)
     }
 
     // const scoreList = document.getElementById("score-container");
 
-
+    // make this one work
     static sortScores = () => {
-        Score.allScores.sort(function(a,b) {
+        let ss = Score.allScores.sort(function(a,b) {
             return a.moves - b.moves
         })
+        // ss. iterate and add to DOM
     }
 
 }

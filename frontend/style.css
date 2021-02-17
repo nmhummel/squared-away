@@ -13,11 +13,22 @@ body {
     background-size: auto auto;
 }
 
+/* #canvas {
+    border: 1px solid white;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 500px;
+    height: 500px;
+} */
+
 .light-text {
     color:darkgray;
     font-family: fantasy;
     font-size: 35px;
     text-align: center;
+    align-content: center;
 }
 
 .dark-text {
@@ -35,23 +46,29 @@ body {
     justify-content: center;
     align-items: stretch;
     align-content: center;
-    top:40%;
+    top:30%;
 }
 
 
-/* game board container */
+/* game board container background-color: #003B6F;*/
 #gameBoard {
+    display: flex;
+    flex-wrap: nowrap;
     width: 500px;
     height: 500px;
     margin: 50px 50px 50px 50px;
     overflow: hidden;
     position: relative;
-    top: 40%;
+    top: 30%;
     align-self: center;
-    background-color: #003B6F;
     outline: 4px solid white;
 }
 
+.allCells {
+    border: 1px dotted darkred;
+    height: 100px;
+    width: 100px;
+}
 /* scoreboard */
 #score-container  {
     width: 300px;
@@ -61,7 +78,7 @@ body {
     background-color: lightslategrey;
     overflow: hidden;
     position: relative;
-    top: 40%;
+    top: 30%;
     outline: 4px solid white;
     color: darkred;
     overflow-y: auto;
@@ -77,7 +94,7 @@ body {
     background-color: lightslategrey;
     overflow: hidden;
     position: relative;
-    top: 40%;
+    top: 30%;
     outline: 4px solid white;
     align-content: center;
     overflow-y: scroll;
@@ -93,11 +110,13 @@ body {
     left: 0;
 }
 
+/* lists on either side */
 .side-list {
     list-style-type: none;
     padding-left: 10px;
     font-family: sans-serif;
     align-content: center;
+    color:darkred;
 }
 
 

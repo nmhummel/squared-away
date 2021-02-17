@@ -15,11 +15,12 @@ class Board {
         this.element.addEventListener('click', this.handleLiClick)
     }
 
-    static handleLiClick = (e) => {   // rewrite as arrow function
-        e.target = this.id
-        console.log(this)
+    handleLiClick = (event) => {   // rewrite as arrow function
+        let click = event.target
+        this.renderBoard();
+        //console.log("CLICK", click)
     } 
-    
+
     renderList() {
         this.element.innerHTML = `Board #${this.id}`
         this.element.id = `board-${this.id}`
@@ -36,6 +37,13 @@ class Board {
     renderBoard() {
         // iterate over all cells and determine which color it should be
         // use split to get array of discolored squares
+        console.log(this)
+        this.discolored.split("-").forEach(element => {
+            // array of all cells
+            // access any cell that matches array index of element
+            let index = parseInt(element) - 1 
+            //debugger
+        });
     }
     
 

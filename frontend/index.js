@@ -30,8 +30,8 @@ class Cell {
         this.width = cellSize;
         this.height = cellSize;
         this.element = document.getElementById(`cell${counter}`)
+        //this.element.style.position = "relative" - utilize x/y
     }
-    
 
 }
 
@@ -47,7 +47,7 @@ class Cell {
 // if cell # is in API for board, change color tile
 
 function createGrid() {
-    let counter = 1;
+    let counter = 0;
     for (let y = cellSize; y < gameBoard.height; y += cellSize) {
         for (let x = 0; x < gameBoard.width; x += cellSize) {
             gameGrid.push(new Cell(x,y,counter));
