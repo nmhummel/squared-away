@@ -17,11 +17,7 @@ class ScoreApi {
         })
         .catch((error) => { console.log(error.message) })
     }
-
-
-
-        
-    //scoreApi.getScores()
-    
-   
 }
+        
+const scoreApi = new ScoreApi(BASE_URL)
+scoreApi.getScores();

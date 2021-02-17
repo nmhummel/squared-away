@@ -8,19 +8,20 @@ class Board {
         this.discolored = discolored
         Board.allBoards.push(this)
 
-                // setup the html element that will contain the item
+        // setup the html element that will contain the item
         this.element = document.createElement('li')
-        this.element.dataset["id"] = id
-        this.element.id = `board-${id}`
+        
+        this.element.className = `side-list`
         this.element.innerHTML = `Board #${id}`
         console.log(this)
         boardChoices.appendChild(this.element)
-        this.element.addEventListener('click', this.handleLiClick)
-
+        this.element.addEventListener('click', this.handleLiClick())
+        //this.element.dataset["id"] = id
 
     }
     
     handleLiClick(){
+        // how to add ahref?
         
     }
     

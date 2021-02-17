@@ -24,13 +24,6 @@ function createBoardList(boards){
         // boardChoices.appendChild(listItem)
         })
 }
+
 const boardApi = new BoardApi(BASE_URL)
 boardApi.getBoards();
-//ScoreApi.getScores();
-
-//boardApi.getBoards()
-    // static sortBoard = () => {
-    //     Board.allBoards.sort(function(a,b) {
-    //         return a.id - b.id
-    //     })
-    // }
