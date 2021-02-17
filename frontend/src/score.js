@@ -12,22 +12,28 @@ class Score {
 
     //const BASE_URL = 'http://localhost:3000'
     // read - scoreboard (scores, username)
-    fetchScores() {
-        fetch(`${BASE_URL}/scores`)
-        .then(resp => resp.json())
-        .then(scores => {
-            for (const score of scores) {
-                let s = new Score(score.id, score.moves, score.username, score.board_id)
-                s.createScoreboard()
-                s.sortScores()
-            }
-        })
-        .catch((error) => { console.log(error.message) })
-    }
+    // fetchScores() {
+    //     fetch(`${BASE_URL}/scores`)
+    //     .then(resp => resp.json())
+    //     .then(scores => {
+    //         for (const score of scores) {
+    //             let s = new Score(score.id, score.moves, score.username, score.board_id)
+    //             s.renderScoreList() 
+    //             s.sortScores()
+    //         }
+    //     })
+    //     .catch((error) => { console.log(error.message) })
+    // }
 
-    createScoreboard() {
-     
-
+    // const scoreList = document.getElementById("score-container");
+    renderScoreList() {
+        scoreList.innerHTML +=
+        `<ul>
+          <li>
+            <h2>Moves: ${this.moves}</h2>
+            <br>${this.username}
+          </li>
+        </ul>`
     }
 
     static sortScores = () => {
