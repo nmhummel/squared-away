@@ -52,8 +52,6 @@ body {
 
 /* game board container background-color: #003B6F;*/
 #gameBoard {
-    display: flex;
-    flex-wrap: nowrap;
     width: 500px;
     height: 500px;
     margin: 50px 50px 50px 50px;
@@ -64,10 +62,19 @@ body {
     outline: 4px solid white;
 }
 
+.flex-grid{
+    display: flex;
+}
+
+/* #player {
+    flex: 1;
+    height: 100px;
+} */
+
 .allCells {
     border: 1px dotted darkred;
     height: 100px;
-    width: 100px;
+    flex: 1;
 }
 /* scoreboard */
 #score-container  {
@@ -103,10 +110,9 @@ body {
 
 /* character piece */
 #player {
-    position: absolute;
+    position: relative;
     height: initial;
     width: initial;
-    outline: 1px dotted red;
     left: 0;
 }
 
