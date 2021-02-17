@@ -14,7 +14,7 @@ class Board {
 
         this.element = document.createElement('li')
         this.element.className = `side-list`
-        this.element.innerHTML = `Board #${id}`
+        this.element.innerHTML = `Board #${id}`.link(`${BASE_URL}/boards/${this.id}`);
         boardList.appendChild(this.element)
     }
     // <button class="delete-button" data-id=${this.id} onClick="deleteUser()">DELETE</button>
@@ -22,7 +22,7 @@ class Board {
 
     // handleLiClick() {
     //     // how to add ahref?
-    //     fetch(`${BASE_URL}/board/${this.id}`, {
+    //     fetch(`${BASE_URL}/boards/${this.id}`, {
     //         method: 'GET'
     //     })
     // this.location.load()

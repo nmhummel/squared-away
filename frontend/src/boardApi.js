@@ -10,8 +10,6 @@ class BoardApi {
         .then(boards => createBoardList(boards))         
     }
 
-
-
 }
 
 function createBoardList(boards){
