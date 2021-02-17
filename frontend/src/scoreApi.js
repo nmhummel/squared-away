@@ -12,7 +12,7 @@ class ScoreApi {
             for (const score of scores) {
                 let s = new Score(score.id, score.moves, score.username, score.board_id)
                 s.renderScoreList() 
-                s.sortScores()
+                //s.sortScores()
             }
         })
         .catch((error) => { console.log(error.message) })

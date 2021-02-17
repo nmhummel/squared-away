@@ -7,25 +7,28 @@ class Board {
         this.id = id
         this.discolored = discolored
         Board.allBoards.push(this)
-
+        console.log(this)
         // setup the html element that will contain the item
+
+        //is.element.dataset["id"] = id
+
         this.element = document.createElement('li')
-        
         this.element.className = `side-list`
         this.element.innerHTML = `Board #${id}`
-        console.log(this)
-        boardChoices.appendChild(this.element)
-        this.element.addEventListener('click', this.handleLiClick())
-        //this.element.dataset["id"] = id
+        boardList.appendChild(this.element)
+    }
+    // <button class="delete-button" data-id=${this.id} onClick="deleteUser()">DELETE</button>
+    //const boardList = document.getElementById('board-container');
 
-    }
+    // handleLiClick() {
+    //     // how to add ahref?
+    //     fetch(`${BASE_URL}/board/${this.id}`, {
+    //         method: 'GET'
+    //     })
+    // this.location.load()
+    // }
     
-    handleLiClick(){
-        // how to add ahref?
-        
-    }
-    
-    renderBoard(){
+    renderBoard() {
         // iterate over all cells and determine which color it should be
         // use split to get array of discolored squares
     }

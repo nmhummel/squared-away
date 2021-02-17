@@ -8,31 +8,17 @@ class Score {
         this.username = username
         this.board_id = board_id
         Score.allScores.push(this)
+        console.log(this)
     }
-
-    //const BASE_URL = 'http://localhost:3000'
-    // read - scoreboard (scores, username)
-    // fetchScores() {
-    //     fetch(`${BASE_URL}/scores`)
-    //     .then(resp => resp.json())
-    //     .then(scores => {
-    //         for (const score of scores) {
-    //             let s = new Score(score.id, score.moves, score.username, score.board_id)
-    //             s.renderScoreList() 
-    //             s.sortScores()
-    //         }
-    //     })
-    //     .catch((error) => { console.log(error.message) })
-    // }
 
     // const scoreList = document.getElementById("score-container");
     renderScoreList() {
         scoreList.innerHTML +=
-        `<ul>
+        `<ul class="side-list">
           <li>
-            <h2>Moves: ${this.moves}</h2>
-            <br>${this.username}
-          </li>
+            <h3>${this.moves}</h3>
+            ${this.username}<br>
+          </li><br>
         </ul>`
     }
 

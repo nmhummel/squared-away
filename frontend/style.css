@@ -96,6 +96,8 @@ body {
 .side-list {
     list-style-type: none;
     padding-left: 10px;
+    font-family: sans-serif;
+    align-content: center;
 }
 
 

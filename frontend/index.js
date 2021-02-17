@@ -12,7 +12,7 @@
 const BASE_URL = 'http://localhost:3000'
 const player = document.getElementById('player');
 const scoreList = document.getElementById("score-container");
-const boardChoices = document.getElementById('board-container');
+const boardList = document.getElementById('board-container');
 const gameBoard = document.getElementById('gameBoard');
    gameBoard.width = 500;
    gameBoard.height = 500;
