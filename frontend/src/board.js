@@ -17,9 +17,9 @@ class Board {
 
     handleLiClick = (event) => {   // rewrite as arrow function
         let click = event.target
-        this.renderBoard();
+        this.renderDiscolored();
         alert(`Board #${this.id} loaded`)
-        //console.log("CLICK", click)
+        console.log("CLICK", click)
     } 
 
     renderList() {
@@ -31,22 +31,28 @@ class Board {
     //const boardList = document.getElementById('board-container');
     addToDom() {
         boardList.append(this.renderList())
-        // Board.gameBoard.append(this.renderBoard())
+        // Board.gameBoard.append(this.renderDiscolored())
  
     }
     
-    renderBoard() {
-        // iterate over all cells and determine which color it should be
+    // HALP!!!
+    static arrayOfDiscolored = []
+
+    renderDiscolored() {
+        // iterate over all cells and determine which color it should be - const squares = []?
         // use split to get array of discolored squares
-        console.log(this)
-        this.discolored.split("-").forEach(element => {
-            // array of all cells
-            // access any cell that matches array index of element
-            let index = parseInt(element) - 1 
-            //debugger
-        });
+        console.log("hi", this)
+        debugger
+        //let discoloreds = Board.allBoards.filter(n => n)
+        Board.allBoards.forEach(ele => {
+            let board = ele.discolored.split("-")
+            console.log(board)
+            arrayOfDiscolored.push(board)
+        })      
     }
-    
+           // array of all cells
+            // access any cell that matches array index of element
+            //let index = parseInt(element) - 1 
      
     
     

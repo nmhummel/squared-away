@@ -1,15 +1,12 @@
-// each cell as it's own div element, all the same size - display: block inside divs
-// gameboard div is container
-// flex grid gameboard container
-// class called game for gameGrid - for making new game 
-
 // if cell # is in API for board, change color tile
 const BASE_URL = 'http://localhost:3000'
+const scoreList = document.getElementById("score-container");
+const boardList = document.getElementById('board-container');
 const grid = document.querySelector('.grid')
 const squares = []
 let currentPosition;
-const tardisCard = `<img id="tardis" width=100 height=100 src="images/tardis-icon.png">`;
-let regularTile; // darkred color
+const tardisCard = `<img id="tardis" width=100 height=100 src="images/tardis-icon.png">`; // ???
+let regularTile; // darkred color ???
 
 function createBoard() {
     for (let i = 1; i < 26; i++) {
@@ -18,9 +15,11 @@ function createBoard() {
     grid.appendChild(square)
     squares.push(square)
     square.innerHTML = tardisCard
+    //renderDiscolored()
 }}
 console.log(squares)
 createBoard()
+
 
 let score = 0
 const totalMoves = document.getElementById("total-moves")
@@ -46,8 +45,6 @@ document.addEventListener("keyup", function(e) {
 })
 
 //<div id = "cell-1"></div>
-
-//let startCell = document.getElementById(`cell-${i}`)
 let playerStart = document.getElementById('cell-1')
 playerStart.innerHTML = `<img id="player" src="images/100-right.png">`
 currentPosition = 0;
@@ -102,10 +99,6 @@ function movePlayerUp() {
     
 
 
-
-
-    const scoreList = document.getElementById("score-container");
-    const boardList = document.getElementById('board-container');
 
 
 
