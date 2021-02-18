@@ -40,7 +40,7 @@ body {
     align-items: stretch;
     align-content: center;
     /* top: 20%; */
-    position: static;
+    position: relative;
 }
 
 .grid {
@@ -52,6 +52,7 @@ body {
     margin: 50px 50px 50px 50px;
     outline: 4px solid white;
     /* top: 20%; */
+    position: relative;
 }
 
 .grid div {
@@ -73,6 +74,7 @@ body {
     color: darkred;
     overflow-y: auto;
     overflow-x: hidden;
+    position: relative;
 }
 
 /* board choices laid out */
@@ -89,6 +91,7 @@ body {
     align-content: center;
     overflow-y: scroll;
     overflow-x: hidden;
+    position: relative;
 }
 
 

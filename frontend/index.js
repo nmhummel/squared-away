@@ -1,11 +1,3 @@
-// // document.addEventListener("DOMContentLoaded", () => {
-// //     //fetchBoards();
-// //     createScoreboard();
-// //     sortScores();
-// //     //showBoards
-// // })
-
-
 // each cell as it's own div element, all the same size - display: block inside divs
 // gameboard div is container
 // flex grid gameboard container
@@ -16,6 +8,8 @@
 const grid = document.querySelector('.grid')
 const squares = []
 let currentPosition;
+const tardisCard = `<img id="tardis" width=100 height=100 src="images/tardis-icon.png">`;
+let regularTile; // darkred color
 
 function createBoard() {
     for (let i = 1; i < 26; i++) {
@@ -23,23 +17,31 @@ function createBoard() {
     square.id = `cell-${i}`
     grid.appendChild(square)
     squares.push(square)
+    square.innerHTML = tardisCard
 }}
 console.log(squares)
 createBoard()
 
+let score = 0
+const totalMoves = document.getElementById("total-moves")
+totalMoves.innerHTML = `<p class="light-text">Total Moves: ${score}</p>`
 
 document.addEventListener("keyup", function(e) {
     if (e.key === "ArrowLeft") {
         movePlayerLeft();
+        score += 1
     }
     else if (e.key === "ArrowRight") {
         movePlayerRight();
+        score += 1
     }
     else if (e.key === "ArrowDown") {
         movePlayerDown();
+        score += 1
     }
     else if (e.key === "ArrowUp") {
         movePlayerUp();
+        score += 1
     }
 })
 
@@ -58,6 +60,13 @@ function movePlayerRight() {
         currentPosition += 1
         squares[currentPosition].innerHTML = `<img id="player" src="images/100-right.png">`
         oldSquare.innerHTML = ""
+        
+        //document.getElementById(`cell-${currentPosition}`).style.color = "darkred"
+    }
+    else {
+        squares[currentPosition].innerHTML = `<img id="player" src="images/100-right.png">`
+        oldSquare.innerHTML = ""
+        currentPosition = oldSquare
     }
 }
 
@@ -104,8 +113,7 @@ function movePlayerUp() {
 // const boardList = document.getElementById('board-container');
 
 
-// // const tardisCard = new Image(95, 95);
-// //     tardisCard = "tardis-icon";
+
 
     // static renderElements = () =>{
     //     this.element.className = "allCells"
