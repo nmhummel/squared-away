@@ -4,7 +4,7 @@
 // class called game for gameGrid - for making new game 
 
 // if cell # is in API for board, change color tile
-
+const BASE_URL = 'http://localhost:3000'
 const grid = document.querySelector('.grid')
 const squares = []
 let currentPosition;
@@ -102,15 +102,11 @@ function movePlayerUp() {
 
     
 
-    // const boardApi = new BoardApi(BASE_URL)
-    // boardApi.getBoards();
-    // ScoreApi.getScores();
 
 
 
-
-    // const scoreList = document.getElementById("score-container");
-// const boardList = document.getElementById('board-container');
+    const scoreList = document.getElementById("score-container");
+    const boardList = document.getElementById('board-container');
 
 
 

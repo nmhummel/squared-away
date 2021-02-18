@@ -34,24 +34,27 @@ body {
 /* parent flex box */
 #all-boxes {
     display: flex;
-    flex-flow: row nowrap;
+    flex-direction: row;
+    flex-wrap: nowrap;
     height: 500px;    
     justify-content: center;
     align-items: stretch;
     align-content: center;
-    /* top: 20%; */
+    top: 20%;
     position: relative;
 }
 
+/* center game board */
 .grid {
     height: 500px;
     width: 500px;
     display: flex;
     flex-wrap: wrap;
+    flex-direction: column;
     background-color: #003B6F;
     margin: 50px 50px 50px 50px;
     outline: 4px solid white;
-    /* top: 20%; */
+    top: 20%; 
     position: relative;
 }
 
@@ -60,16 +63,17 @@ body {
     width: 100px;
 }
 
-/* scoreboard */
+/* left scoreboard */
 #score-container  {
     width: 300px;
     height: 500px;
     margin: 50px 50px 50px 50px;
     align-self: center;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
     background-color: lightslategrey;
-    overflow: hidden;
-    /* position: relative; */
-    /* top: 20%; */
+    top: 20%;
     outline: 4px solid white;
     color: darkred;
     overflow-y: auto;
@@ -77,16 +81,17 @@ body {
     position: relative;
 }
 
-/* board choices laid out */
+/* right board choices laid out */
 #board-container {
     width: 300px;
     height: 500px;
     margin: 50px 50px 50px 50px;
     align-self: center;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
     background-color: lightslategrey;
-    overflow: hidden;
-    /* position: relative; */
-    /* top: 20%; */
+    top: 20%; 
     outline: 4px solid white;
     align-content: center;
     overflow-y: scroll;
