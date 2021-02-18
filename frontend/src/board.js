@@ -25,6 +25,9 @@ class Board {
     } 
 
     loadNew() {
+        currentPosition = 0;
+        score = 0;
+        totalMoves.innerHTML = `<p class="light-text">Total Moves: ${score}</p>`
         squares.forEach(sq => {
             if (sq === "div#cell-1") {
                 sq.innerHTML = `<img id="player" src="images/100-right.png">`
@@ -54,17 +57,20 @@ class Board {
             squares[index].innerHTML = tardisCard
         })    
     }
+    
+    enterName() {
+        let person = prompt("Enter your user name");
+        let score = totalMoves
 
+        if (person == null || person == "" || score == 0) {
+            txt = "Score not saved.";
+        } else {
+            txt = "Great job," + person + "! Score was saved.";
+            saveScore();
+        }
+    }
 
     
-    // checkForWinner() {
-    //     squares.forEach(sq => {
-    //         if (sq.innerHTML = "") {
-    //             Score.renderScore()
-    //         }
-    //     } )
-    // }
-
 
 }
 

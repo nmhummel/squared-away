@@ -29,8 +29,8 @@ function saveScore(){
     // const currentUsername = usernameInput.value
 
     let game = {
-        moves: this.moves,
-        username: this.username,
+        moves: score,
+        username: person,
         board_id: this.board_id
     }
     fetch(`${BASE_URL}/scores`, {

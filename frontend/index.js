@@ -19,6 +19,7 @@ console.log(squares)
 createBoard()
 
 
+
 let score = 0
 const totalMoves = document.getElementById("total-moves")
 totalMoves.innerHTML = `<p class="light-text">Total Moves: ${score}</p>`
@@ -26,19 +27,19 @@ totalMoves.innerHTML = `<p class="light-text">Total Moves: ${score}</p>`
 document.addEventListener("keyup", function(e) {
     if (e.key === "ArrowLeft") {
         movePlayerLeft();
-        score += 1
+        totalMoves.innerHTML = `<p class="light-text">Total Moves: ${score}</p>`
     }
     else if (e.key === "ArrowRight") {
         movePlayerRight();
-        score += 1
+        totalMoves.innerHTML = `<p class="light-text">Total Moves: ${score}</p>`
     }
     else if (e.key === "ArrowDown") {
         movePlayerDown();
-        score += 1
+        totalMoves.innerHTML = `<p class="light-text">Total Moves: ${score}</p>`
     }
     else if (e.key === "ArrowUp") {
         movePlayerUp();
-        score += 1
+        totalMoves.innerHTML = `<p class="light-text">Total Moves: ${score}</p>`
     }
 })
 
@@ -52,22 +53,24 @@ const player = document.getElementById('player');
 function movePlayerRight() {
     let oldSquare = squares[currentPosition]
     player.src = "images/100-right.png"
-    if (currentPosition !== 4 || currentPosition !== 9 || currentPosition !== 14 || currentPosition !== 19 || currentPosition !== 24) {
+    if (currentPosition !== 4 && currentPosition !== 9 && currentPosition !== 14 && currentPosition !== 19 && currentPosition !== 24) {
         currentPosition += 1
         squares[currentPosition].innerHTML = `<img id="player" src="images/100-right.png">`
-        oldSquare.innerHTML = "" 
-        //document.getElementById(`cell-${currentPosition}`).style.color = "darkred"
+        oldSquare.innerHTML = ""    
+        score += 1
         checkForWinner()
+        //document.getElementById(`cell-${currentPosition}`).style.color = "darkred"  
     }
 }
 
 function movePlayerLeft() {
     let oldSquare = squares[currentPosition]
     player.src = "images/100-left.png"
-    if (currentPosition !== 0 || currentPosition !== 5 || currentPosition !== 10 || currentPosition !== 15 || currentPosition !== 20) {
+    if (currentPosition !== 0 && currentPosition !== 5 && currentPosition !== 10 && currentPosition !== 15 && currentPosition !== 20) {
         currentPosition -= 1
         squares[currentPosition].innerHTML = `<img id="player" src="images/100-left.png">`
         oldSquare.innerHTML = ""
+        score += 1
         checkForWinner()
     }
 } 
@@ -75,10 +78,11 @@ function movePlayerLeft() {
 function movePlayerDown() {
     let oldSquare = squares[currentPosition]
     player.src = "images/100-down.png"
-    if (currentPosition !== 20 || currentPosition !== 21 || currentPosition !== 22 || currentPosition !== 23 || currentPosition !== 24) {
+    if (currentPosition !== 20 && currentPosition !== 21 && currentPosition !== 22 && currentPosition !== 23 && currentPosition !== 24) {
         currentPosition += 5
         squares[currentPosition].innerHTML = `<img id="player" src="images/100-down.png">`
         oldSquare.innerHTML = ""
+        score += 1
         checkForWinner()
     }
 }
@@ -86,22 +90,29 @@ function movePlayerDown() {
 function movePlayerUp() {
     let oldSquare = squares[currentPosition]
     player.src = "images/100-up.png"
-    if (currentPosition !== 0 || currentPosition !== 1 || currentPosition !== 2 || currentPosition !== 3 || currentPosition !== 4) {
+    if (currentPosition !== 0 && currentPosition !== 1 && currentPosition !== 2 && currentPosition !== 3 && currentPosition !== 4) {
         currentPosition -= 5
         squares[currentPosition].innerHTML = `<img id="player" src="images/100-down.png">`
         oldSquare.innerHTML = ""
+        score += 1
         checkForWinner()
     }
 }
 
-    
 
 
 
-
-
-
-    // static renderElements = () =>{
-    //     this.element.className = "allCells"
-    // }
-// }
+function checkForWinner() {
+    if (squares.every(cell => cell.innerHTML !== tardisCard)) {
+        //WINNING!
+        console.log("WINNING!")
+        //check for one square
+        //or check for booth
+        //enterName();
+        // sendFetchRequest();
+        // addScoreToList();
+    }
+    //Score.renderScore()
+    // if won, send fetch request with info on score and board id and username
+    // with data we get back, instantiate a new score and render/save to list   
+}
