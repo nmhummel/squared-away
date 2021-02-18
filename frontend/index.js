@@ -14,8 +14,6 @@ function createBoard() {
     square.id = `cell-${i}`
     grid.appendChild(square)
     squares.push(square)
-    square.innerHTML = tardisCard
-    //renderDiscolored()
 }}
 console.log(squares)
 createBoard()

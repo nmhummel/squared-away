@@ -32,37 +32,40 @@ body {
 }
 
 /* parent flex box */
-#all-boxes {
+.all-boxes {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
-    height: 500px;    
+ 
     justify-content: center;
     align-items: stretch;
     align-content: center;
-    top: 20%;
+    top: 5%;
     position: relative;
 }
 
-/* center game board */
-.grid {
-    height: 500px;
-    width: 500px;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    background-color: #003B6F;
-    margin: 50px 50px 50px 50px;
-    outline: 4px solid white;
-    top: 20%; 
-    position: relative;
-}
+/* center game board 
+TREAD CAREFULLY!!!
+*/
 
-.grid div {
-    height: 100px;
-    width: 100px;
-}
+    .grid {
+        height: 500px;
+        width: 500px;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        background-color: #003B6F;
+        margin: 50px 50px 50px 50px;
+        outline: 4px solid white;
+        position: relative;
+    }
 
+    .grid div {
+        height: 100px;
+        width: 100px;
+    }
+
+    
 /* left scoreboard */
 #score-container  {
     width: 300px;
@@ -73,7 +76,6 @@ body {
     flex-wrap: wrap;
     flex-direction: column;
     background-color: lightslategrey;
-    top: 20%;
     outline: 4px solid white;
     color: darkred;
     overflow-y: auto;
@@ -91,7 +93,6 @@ body {
     flex-wrap: nowrap;
     flex-direction: column;
     background-color: lightslategrey;
-    top: 20%; 
     outline: 4px solid white;
     align-content: center;
     overflow-y: scroll;
