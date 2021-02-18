@@ -37,8 +37,16 @@ class Score {
         }
     }
 
+    checkForWinner() {
+        squares.forEach(sq => {
+            if (sq.innerHTML = "") {
+                Score.renderScore()
+            }
+        } )
+    }
+    
     renderScore() {
-
+        console.log(this)
     }
 }
 // create - new score

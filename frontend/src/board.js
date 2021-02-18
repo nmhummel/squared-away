@@ -17,17 +17,22 @@ class Board {
 
     handleLiClick = (event) => {   // rewrite as arrow function
         let click = event.target
+        this.loadNew();
+        squares[0].innerHTML = `<img id="player" src="images/100-right.png">`
         this.renderDiscolored();
         alert(`Board #${this.id} loaded`)
         console.log("CLICK", click)
     } 
 
-    loadNew(event) {
+    loadNew() {
         squares.forEach(sq => {
-            sq
+            if (sq === "div#cell-1") {
+                sq.innerHTML = `<img id="player" src="images/100-right.png">`
+            }
+            else {
+                sq.innerHTML = ""
+            }
         })
-        // iterate over all and make sure they're blue.
-        // put back all icons/characters
     }
 
     renderList() {
@@ -41,11 +46,8 @@ class Board {
 
     }
 
-
-
     renderDiscolored() {
         console.log("hi", this)
-        debugger
         let discoloredArray = this.discolored.split("-")
         discoloredArray.forEach(ele => {
             let index = parseInt(ele) - 1 
@@ -54,16 +56,14 @@ class Board {
     }
 
 
-    winnerDetermined() {
-        squares.forEach(sq => {
-            if (sq.innerHTML = "") {
-                console.log(this)
-            }
-        } )
-    }
     
-        makeRandomBoard() {
-    }
+    // checkForWinner() {
+    //     squares.forEach(sq => {
+    //         if (sq.innerHTML = "") {
+    //             Score.renderScore()
+    //         }
+    //     } )
+    // }
 
 
 }

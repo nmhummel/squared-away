@@ -42,6 +42,7 @@ document.addEventListener("keyup", function(e) {
     }
 })
 
+// if square is empty and player touches on it
 //<div id = "cell-1"></div>
 let playerStart = document.getElementById('cell-1')
 playerStart.innerHTML = `<img id="player" src="images/100-right.png">`
@@ -56,12 +57,8 @@ function movePlayerRight() {
         squares[currentPosition].innerHTML = `<img id="player" src="images/100-right.png">`
         oldSquare.innerHTML = "" 
         //document.getElementById(`cell-${currentPosition}`).style.color = "darkred"
+        checkForWinner()
     }
-    // else {
-    //     squares[currentPosition].innerHTML = `<img id="player" src="images/100-right.png">`
-    //     oldSquare.innerHTML = ""
-    //     currentPosition = oldSquare
-    // }
 }
 
 function movePlayerLeft() {
@@ -71,6 +68,7 @@ function movePlayerLeft() {
         currentPosition -= 1
         squares[currentPosition].innerHTML = `<img id="player" src="images/100-left.png">`
         oldSquare.innerHTML = ""
+        checkForWinner()
     }
 } 
 
@@ -81,6 +79,7 @@ function movePlayerDown() {
         currentPosition += 5
         squares[currentPosition].innerHTML = `<img id="player" src="images/100-down.png">`
         oldSquare.innerHTML = ""
+        checkForWinner()
     }
 }
 
@@ -91,6 +90,7 @@ function movePlayerUp() {
         currentPosition -= 5
         squares[currentPosition].innerHTML = `<img id="player" src="images/100-down.png">`
         oldSquare.innerHTML = ""
+        checkForWinner()
     }
 }
 
