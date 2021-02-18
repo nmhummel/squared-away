@@ -1,41 +1,10 @@
-// document.addEventListener("DOMContentLoaded", () => {
-//     //fetchBoards();
-//     createScoreboard();
-//     sortScores();
-//     //showBoards
-// })
+// // document.addEventListener("DOMContentLoaded", () => {
+// //     //fetchBoards();
+// //     createScoreboard();
+// //     sortScores();
+// //     //showBoards
+// // })
 
-const BASE_URL = 'http://localhost:3000'
-const player = document.getElementById('player');
-const scoreList = document.getElementById("score-container");
-const boardList = document.getElementById('board-container');
-const gameBoard = document.getElementById('gameBoard');
-   gameBoard.width = 500;
-   gameBoard.height = 500;
-const cellSize = 100;
-const gameGrid = [];
-
-// const tardisCard = new Image(95, 95);
-//     tardisCard = "tardis-icon";
-
-class Cell {
-    constructor(x,y,counter) {
-        this.x = x;
-        this.y = y;
-        this.width = cellSize;
-        this.height = cellSize;
-        this.element = document.getElementById(`cell${counter}`)
-        this.element.style.position = "relative" //- utilize x/y
-    }
-
-    // static renderElements = () =>{
-    //     this.element.className = "allCells"
-    // }
-}
-
-// function createDivs() {
-//     const cell = document.createElement('div')
-// }
 
 // each cell as it's own div element, all the same size - display: block inside divs
 // gameboard div is container
@@ -44,18 +13,20 @@ class Cell {
 
 // if cell # is in API for board, change color tile
 
-function createGrid() {
-    let counter = 1;
-    for (let y = cellSize; y < gameBoard.height; y += cellSize) {
-        for (let x = 0; x < gameBoard.width; x += cellSize) {
-            gameGrid.push(new Cell(x,y, counter));
-            counter++;
-         }
-        //debugger
-    }
-}
-createGrid();
-console.log(gameGrid);
+const grid = document.querySelector('.grid')
+const squares = []
+let currentPosition;
+
+function createBoard() {
+    for (let i = 1; i < 26; i++) {
+    const square = document.createElement('div')
+    square.id = `cell-${i}`
+    grid.appendChild(square)
+    squares.push(square)
+}}
+console.log(squares)
+createBoard()
+
 
 document.addEventListener("keyup", function(e) {
     if (e.key === "ArrowLeft") {
@@ -72,41 +43,71 @@ document.addEventListener("keyup", function(e) {
     }
 })
 
-let playerLeft = 0;
-let playerTop = 0;
+//<div id = "cell-1"></div>
+
+//let startCell = document.getElementById(`cell-${i}`)
+let playerStart = document.getElementById('cell-1')
+playerStart.innerHTML = `<img id="player" src="images/100-right.png">`
+currentPosition = 0;
+const player = document.getElementById('player');
 
 function movePlayerRight() {
-    player.src = "images/100-right.png"
-    if (playerLeft < 400) {
-        playerLeft += 100;
-        player.style.left = playerLeft + 'px';
+    let oldSquare = squares[currentPosition]
+    if (currentPosition !== 4 || currentPosition !== 9 || currentPosition !== 14 || currentPosition !== 19 || currentPosition !== 24) {
+        player.src = "images/100-right.png"
+        currentPosition += 1
+        squares[currentPosition].innerHTML = `<img id="player" src="images/100-right.png">`
+        oldSquare.innerHTML = ""
     }
 }
 
 function movePlayerLeft() {
+    let oldSquare = squares[currentPosition]
     player.src = "images/100-left.png"
-    if (playerLeft > 0) {
-        playerLeft -= 100;
-        player.style.left = playerLeft + 'px'; 
+    if (currentPosition !== 0 || currentPosition !== 5 || currentPosition !== 10 || currentPosition !== 15) {
+        currentPosition -= 1
+        squares[currentPosition].innerHTML = `<img id="player" src="images/100-left.png">`
+        oldSquare.innerHTML = ""
     }
 } 
 
 function movePlayerDown() {
+    let oldSquare = squares[currentPosition]
     player.src = "images/100-down.png"
-    if (playerTop < 400) {
-        playerTop += 100;
-        player.style.top = playerTop + 'px';
+    if (currentPosition !== 20 || currentPosition !== 21 || currentPosition !== 22 || currentPosition !== 23 || currentPosition !== 24) {
+        currentPosition += 5
+        squares[currentPosition].innerHTML = `<img id="player" src="images/100-down.png">`
+        oldSquare.innerHTML = ""
     }
 }
 
 function movePlayerUp() {
+    let oldSquare = squares[currentPosition]
     player.src = "images/100-up.png"
-    if (playerTop > 0) {
-        playerTop -= 100;
-        player.style.top = playerTop + 'px';
+    if (currentPosition !== 0 || currentPosition !== 1 || currentPosition !== 2 || currentPosition !== 3 || currentPosition !== 4) {
+        currentPosition -= 5
+        squares[currentPosition].innerHTML = `<img id="player" src="images/100-down.png">`
+        oldSquare.innerHTML = ""
     }
 }
 
-// const boardApi = new BoardApi(BASE_URL)
-// boardApi.getBoards();
-// ScoreApi.getScores();
+    
+
+    // const boardApi = new BoardApi(BASE_URL)
+    // boardApi.getBoards();
+    // ScoreApi.getScores();
+
+
+
+
+    // const scoreList = document.getElementById("score-container");
+// const boardList = document.getElementById('board-container');
+
+
+// // const tardisCard = new Image(95, 95);
+// //     tardisCard = "tardis-icon";
+
+    // static renderElements = () =>{
+    //     this.element.className = "allCells"
+    // }
+// }
