@@ -18,6 +18,7 @@ class Board {
     handleLiClick = (event) => {   // rewrite as arrow function
         let click = event.target
         this.renderBoard();
+        alert(`Board #${this.id} loaded`)
         //console.log("CLICK", click)
     } 
 
@@ -45,6 +46,9 @@ class Board {
             //debugger
         });
     }
+    
+     
+    
     
 
 }

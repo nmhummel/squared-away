@@ -55,25 +55,24 @@ const player = document.getElementById('player');
 
 function movePlayerRight() {
     let oldSquare = squares[currentPosition]
+    player.src = "images/100-right.png"
     if (currentPosition !== 4 || currentPosition !== 9 || currentPosition !== 14 || currentPosition !== 19 || currentPosition !== 24) {
-        player.src = "images/100-right.png"
         currentPosition += 1
         squares[currentPosition].innerHTML = `<img id="player" src="images/100-right.png">`
-        oldSquare.innerHTML = ""
-        
+        oldSquare.innerHTML = "" 
         //document.getElementById(`cell-${currentPosition}`).style.color = "darkred"
     }
-    else {
-        squares[currentPosition].innerHTML = `<img id="player" src="images/100-right.png">`
-        oldSquare.innerHTML = ""
-        currentPosition = oldSquare
-    }
+    // else {
+    //     squares[currentPosition].innerHTML = `<img id="player" src="images/100-right.png">`
+    //     oldSquare.innerHTML = ""
+    //     currentPosition = oldSquare
+    // }
 }
 
 function movePlayerLeft() {
     let oldSquare = squares[currentPosition]
     player.src = "images/100-left.png"
-    if (currentPosition !== 0 || currentPosition !== 5 || currentPosition !== 10 || currentPosition !== 15) {
+    if (currentPosition !== 0 || currentPosition !== 5 || currentPosition !== 10 || currentPosition !== 15 || currentPosition !== 20) {
         currentPosition -= 1
         squares[currentPosition].innerHTML = `<img id="player" src="images/100-left.png">`
         oldSquare.innerHTML = ""

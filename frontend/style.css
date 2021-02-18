@@ -50,7 +50,7 @@ body {
     width: 500px;
     display: flex;
     flex-wrap: wrap;
-    flex-direction: column;
+    flex-direction: row;
     background-color: #003B6F;
     margin: 50px 50px 50px 50px;
     outline: 4px solid white;

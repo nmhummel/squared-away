@@ -25,7 +25,25 @@ class Score {
         // ss. iterate and add to DOM
     }
 
+    enterName() {
+        let person = prompt("Enter your user name");
+        let score = totalMoves
+
+        if (person == null || person == "" || score == 0) {
+            txt = "Score not saved.";
+        } else {
+            txt = "Great job," + person + "! Score was saved.";
+            saveScore();
+        }
+    }
+
+    renderScore() {
+
+    }
 }
 // create - new score
 // update - update score when repeating a board
 
+
+      
+      
