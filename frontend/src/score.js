@@ -11,19 +11,19 @@ class Score {
         console.log(this)
         this.element = document.createElement('li')
         this.element.className = `side-list`
-        this.element.innerHTML = `<br><b>${moves}</b> by <i>${username}</i> on Board #${board_id}<br>`
+        this.element.innerHTML = `<b>${moves}</b> by <i>${username}</i> on Board #${board_id}`
         scoreList.appendChild(this.element)
     }
 
     // const scoreList = document.getElementById("score-container");
 
     // make this one work
-    // static sortScores = () => {
-    //     Score.allScores.sort(function(a,b) {
-    //         return a.moves - b.moves
-    //     })
-    //     // ss. iterate and add to DOM
-    // }
+    static sortScores = () => {
+        Score.allScores.sort(function(a,b) {
+            return a.moves - b.moves
+        })
+        // ss. iterate and add to DOM
+    }
 
 
     renderScore() {
@@ -34,5 +34,3 @@ class Score {
 }
 // create - new score
 // update - update score when repeating a board
-
-sortScores();

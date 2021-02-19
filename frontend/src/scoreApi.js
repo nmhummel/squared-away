@@ -3,13 +3,12 @@ class ScoreApi {
     constructor(BASE_URL){
         this.baseUrl = `${BASE_URL}/scores`
     }
-    //const BASE_URL = 'http://localhost:3000'
-    // read - scoreboard (scores, username)
+
     getScores() {
         fetch(this.baseUrl)
         .then(resp => resp.json())
         .then(scores => createScoreList(scores))
-        //.catch((error) => { console.log(error.message) })
+        .catch((error) => { console.log(error.message) })
     }
 }
 
@@ -23,16 +22,12 @@ function createScoreList(scores){
 
 function createScore(e){
     e.preventDefault()
-    // const scoreInput = e.target.moves
-    // const usernameInput = e.target.moves
-    // const currentScore = scoreInput.value
     const usernameEntered = document.getElementById("username-entered").value
-
 
     let finishedGame = {
         moves: score,
-        username: usernameEntered, //or person
-        board_id: currentBoardId // or this.board_id
+        username: usernameEntered, 
+        board_id: currentBoardId 
     }
     debugger
     fetch(`${BASE_URL}/scores`, {
@@ -47,6 +42,7 @@ function createScore(e){
     .then(score => {
         let s = new Score(score.id, score.moves, score.username, score.board_id)
         allScores.push(s);
+        //allScores.sortScores; // not sorting upon adding
         console.log(s);
     })
     .catch((error) => { console.log(error.message) })

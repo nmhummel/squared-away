@@ -19,8 +19,6 @@ function createBoard() {
 console.log(squares)
 createBoard()
 
-
-
 let score = 0
 const totalMoves = document.getElementById("total-moves")
 totalMoves.innerHTML = `<p class="light-text">Total Moves: ${score}</p>`
@@ -100,7 +98,6 @@ function movePlayerUp() {
     }
 }
 
-
 function addScoreForm() {
     const addBtn = document.querySelector("#new-score-btn");
     const formContainer = document.querySelector(".form-container");
@@ -125,9 +122,7 @@ function checkForWinner() {
         console.log("WINNING!")
         //check for one square
         //or check for booth
-        //enterName();
-        // sendFetchRequest();
-        // addScoreToList();
+
     }
     //Score.renderScore()
     // if won, send fetch request with info on score and board id and username

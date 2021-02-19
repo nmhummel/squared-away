@@ -73,7 +73,7 @@ TREAD CAREFULLY!!!
     margin: 50px 50px 50px 50px;
     align-self: center;
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     flex-direction: column;
     background-color: lightslategrey;
     outline: 4px solid white;
@@ -95,7 +95,7 @@ TREAD CAREFULLY!!!
     background-color: lightslategrey;
     outline: 4px solid white;
     align-content: center;
-    overflow-y: scroll;
+    overflow-y: auto;
     overflow-x: hidden;
     position: relative;
 }
