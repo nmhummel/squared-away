@@ -3,7 +3,6 @@ class Score {
     static allScores = []
 
     constructor(moves, username, board_id) {
-       // this.id = id
         this.moves = moves
         this.username = username
         this.board_id = board_id
@@ -15,12 +14,14 @@ class Score {
         scoreList.appendChild(this.element)
     }
 
-    // make this one work
     static sortScores = () => {
-        Score.allScores.sort(function(a,b) {
+        Score.allScores = Score.allScores.sort(function(a,b) {
             return a.moves - b.moves
         })
-        // ss. iterate and add to DOM
+        scoreList.innerHTML = `<div class="dark-text">Top Scores</div>`
+        this.allScores.forEach((score) => {
+            scoreList.appendChild(score.element)
+        })
     }
 
 }

@@ -4,7 +4,7 @@ class ScoresController < ApplicationController
   # GET /scores
   
   def index
-    scores = Score.all
+    scores = Score.order(:moves)
     render json: scores.to_json(except: [:created_at, :updated_at] ) 
   end
 

@@ -1,13 +1,14 @@
 const BASE_URL = 'http://localhost:3000'
+const boardApi = new BoardApi(BASE_URL);
+const scoreApi = new ScoreApi(BASE_URL);
 const scoreList = document.getElementById("score-container");
 const boardList = document.getElementById('board-container');
 const grid = document.querySelector('.grid')
 const squares = []
 let currentPosition;
-const tardisCard = `<img id="tardis" src="images/tardis-icon.png">`; // ???
+const tardisCard = `<img id="tardis" src="images/tardis-icon.png">`; 
 let regularTile; 
 let currentBoardId;
-const formContainer = document.querySelector(".form-container");
 
 function createBoard() {
     for (let i = 1; i < 26; i++) {
@@ -16,8 +17,10 @@ function createBoard() {
     grid.appendChild(square)
     squares.push(square)
 }}
-//console.log(squares)
-createBoard()
+
+createBoard();
+scoreApi.getScores();
+boardApi.getBoards();
 
 let score = 0
 const totalMoves = document.getElementById("total-moves")
@@ -48,8 +51,8 @@ document.addEventListener("keyup", function(e) {
 
 // if square is empty and player touches on it
 //<div id = "cell-1"></div>
-let playerStart = document.getElementById('cell-1')
-playerStart.innerHTML = `<img id="player" src="images/100-right.png">`
+let playerStart = document.getElementById('cell-1');
+playerStart.innerHTML = `<img id="player" src="images/100-right.png">`;
 currentPosition = 0;
 const player = document.getElementById('player');
 
@@ -62,7 +65,6 @@ function movePlayerRight() {
         oldSquare.innerHTML = ""    
         score += 1
     }
-
 }
 
 function movePlayerLeft() {
@@ -98,38 +100,15 @@ function movePlayerUp() {
     }
 }
 
-// function addScoreForm() {
-//     const addBtn = document.querySelector("#new-score-btn");
-//     const scoreForm = document.querySelector(".add-score-form")
-//     scoreForm.addEventListener('submit', createScore)
-//     let addScore = false;
-//     formContainer.style.display = "none";
-//     addBtn.addEventListener("click", () => {
-//         addScore = !addScore;
-//         if (addScore) {
-//             formContainer.style.display = "block";
-//         } else {
-//             formContainer.style.display = "none";
-//         }
-//     })
-// }
-
 function checkForWinner() {
     if (squares.every(cell => cell.innerHTML !== tardisCard)) {
         let username;
         setTimeout(() => {
             username = prompt("The TARDIS has been EXTERMINATED! Enter a name to save your score:")
-            //console.log(score, username, currentBoardId)
             createScore(score, username, currentBoardId)
         }, 500 )
     } 
 }
 
-// immediate add is wonky, but a refresh sets it right.
-// adding 
 
-//addScoreForm();
-const scoreApi = new ScoreApi(BASE_URL);
-scoreApi.getScores();
-const boardApi = new BoardApi(BASE_URL);
-boardApi.getBoards();
+

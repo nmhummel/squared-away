@@ -36,7 +36,6 @@ body {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
- 
     justify-content: center;
     align-items: stretch;
     align-content: center;
@@ -53,28 +52,7 @@ body {
     align-content: center;
 }
 
-button {
-    background-color: #003B6F;
-    border-radius: 0px 0px 0px 0px;
-    border: 1px solid white;
-    color: darkgray;
-    padding: 10px 10px;
-    text-align: center;
-    display: inline-block;
-    font-size: 16px;
-}
-
-.submit {
-    background-color: #003B6F;
-    border-radius: 0px 0px 0px 0px;
-    border: 1px solid white;
-    color: darkgray;
-    padding: 5px 5px;
-    text-align: center;
-    display: inline-block;
-    font-size: 16px;
-    
-}
+/* tardis card to capture */
 
 #tardis {
     vertical-align: middle;

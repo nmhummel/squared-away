@@ -13,22 +13,18 @@ class ScoreApi {
 }
 
 function createScoreList(scores){  
-    let ss = scores.sort((a,b) => { return a.moves - b.moves } )
-    ss.forEach(element => {   
+    scores.forEach(element => {   
         new Score(element.moves, element.username, element.board_id)
     })
 }
 
 function createScore(score, username, currentBoardId){
-    //e.preventDefault()
-    //const usernameEntered = document.getElementById("username-entered").value
-
     let finishedGame = {
         moves: score,
         username: username, 
         board_id: currentBoardId 
     }
-    debugger
+
     fetch(`${BASE_URL}/scores`, {
         method: "POST",
         headers: {
@@ -40,9 +36,8 @@ function createScore(score, username, currentBoardId){
     .then(resp => resp.json())
     .then(score => {
         let s = new Score(score.moves, score.username, score.board_id)
-        allScores.push(s);
-        //allScores.sortScores; // not sorting upon adding
-        formContainer.style.display = "none";    
+        Score.allScores.push(s);
+        Score.sortScores();       
     })
     .catch((error) => { console.log(error.message) })
 }

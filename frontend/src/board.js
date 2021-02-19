@@ -13,8 +13,7 @@ class Board {
         this.element.addEventListener('click', this.handleLiClick)
     }
 
-    handleLiClick = (event) => {  
-        let click = event.target
+    handleLiClick = () => {  
         currentBoardId = this.id
         this.loadNew();
         squares[0].innerHTML = `<img id="player" src="images/100-right.png">`
@@ -47,7 +46,6 @@ class Board {
     }
 
     renderDiscolored() {
-        //console.log("hi", this)
         let discoloredArray = this.discolored.split("-")
         discoloredArray.forEach(ele => {
             let index = parseInt(ele) - 1 
