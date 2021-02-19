@@ -47,7 +47,7 @@ class Board {
     }
 
     renderDiscolored() {
-        console.log("hi", this)
+        //console.log("hi", this)
         let discoloredArray = this.discolored.split("-")
         discoloredArray.forEach(ele => {
             let index = parseInt(ele) - 1 

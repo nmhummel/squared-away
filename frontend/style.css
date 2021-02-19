@@ -44,6 +44,44 @@ body {
     position: relative;
 }
 
+/* form div */
+.form-container {
+    color:darkgray;
+    font-family: fantasy;
+    font-size: 35px;
+    text-align: center;
+    align-content: center;
+}
+
+button {
+    background-color: #003B6F;
+    border-radius: 0px 0px 0px 0px;
+    border: 1px solid white;
+    color: darkgray;
+    padding: 10px 10px;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+}
+
+.submit {
+    background-color: #003B6F;
+    border-radius: 0px 0px 0px 0px;
+    border: 1px solid white;
+    color: darkgray;
+    padding: 5px 5px;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    
+}
+
+#tardis {
+    vertical-align: middle;
+    width: 90px;
+    height: 90px;
+}
+
 /* center game board 
 TREAD CAREFULLY!!!
 */
@@ -63,6 +101,7 @@ TREAD CAREFULLY!!!
     .grid div {
         height: 100px;
         width: 100px;
+        align-items: ce;
     }
 
     

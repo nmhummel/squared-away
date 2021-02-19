@@ -4,7 +4,7 @@ const boardList = document.getElementById('board-container');
 const grid = document.querySelector('.grid')
 const squares = []
 let currentPosition;
-const tardisCard = `<img id="tardis" width=100 height=100 src="images/tardis-icon.png">`; // ???
+const tardisCard = `<img id="tardis" src="images/tardis-icon.png">`; // ???
 let regularTile; 
 let currentBoardId;
 const formContainer = document.querySelector(".form-container");
@@ -16,7 +16,7 @@ function createBoard() {
     grid.appendChild(square)
     squares.push(square)
 }}
-console.log(squares)
+//console.log(squares)
 createBoard()
 
 let score = 0
@@ -27,18 +27,22 @@ document.addEventListener("keyup", function(e) {
     if (e.key === "ArrowLeft") {
         movePlayerLeft();
         totalMoves.innerHTML = `<p class="light-text">Total Moves: ${score}</p>`
+        checkForWinner();
     }
     else if (e.key === "ArrowRight") {
         movePlayerRight();
         totalMoves.innerHTML = `<p class="light-text">Total Moves: ${score}</p>`
+        checkForWinner();
     }
     else if (e.key === "ArrowDown") {
         movePlayerDown();
         totalMoves.innerHTML = `<p class="light-text">Total Moves: ${score}</p>`
+        checkForWinner();
     }
     else if (e.key === "ArrowUp") {
         movePlayerUp();
         totalMoves.innerHTML = `<p class="light-text">Total Moves: ${score}</p>`
+        checkForWinner();
     }
 })
 
@@ -57,8 +61,8 @@ function movePlayerRight() {
         squares[currentPosition].innerHTML = `<img id="player" src="images/100-right.png">`
         oldSquare.innerHTML = ""    
         score += 1
-        //checkForWinner()
     }
+
 }
 
 function movePlayerLeft() {
@@ -69,7 +73,6 @@ function movePlayerLeft() {
         squares[currentPosition].innerHTML = `<img id="player" src="images/100-left.png">`
         oldSquare.innerHTML = ""
         score += 1
-        //checkForWinner()
     }
 } 
 
@@ -81,7 +84,6 @@ function movePlayerDown() {
         squares[currentPosition].innerHTML = `<img id="player" src="images/100-down.png">`
         oldSquare.innerHTML = ""
         score += 1
-        //checkForWinner()
     }
 }
 
@@ -93,7 +95,6 @@ function movePlayerUp() {
         squares[currentPosition].innerHTML = `<img id="player" src="images/100-down.png">`
         oldSquare.innerHTML = ""
         score += 1
-        //checkForWinner()
     }
 }
 
@@ -115,16 +116,17 @@ function addScoreForm() {
 
 function checkForWinner() {
     if (squares.every(cell => cell.innerHTML !== tardisCard)) {
-        //WINNING!
-        console.log("WINNING!")
-        //check for one square
-        //or check for booth
-
-    }
-    //Score.renderScore()
-    // if won, send fetch request with info on score and board id and username
-    // with data we get back, instantiate a new score and render/save to list   
+        let username;
+        setTimeout(() => {
+            username = prompt("The TARDIS has been EXTERMINATED! Enter a name to save your score:")
+        }, 500 )
+        // usernameEntered = username
+        // Score.allScores.push(score, usernameEntered, currentBoardId) // ask jenn
+        // debugger
+    } 
 }
+
+
 
 addScoreForm();
 const scoreApi = new ScoreApi(BASE_URL);
