@@ -7,6 +7,7 @@ const squares = []
 let currentPosition;
 const tardisCard = `<img id="tardis" width=100 height=100 src="images/tardis-icon.png">`; // ???
 let regularTile; // darkred color ???
+let currentBoardId;
 
 function createBoard() {
     for (let i = 1; i < 26; i++) {
@@ -100,6 +101,22 @@ function movePlayerUp() {
 }
 
 
+function addScoreForm() {
+    const addBtn = document.querySelector("#new-score-btn");
+    const formContainer = document.querySelector(".form-container");
+    const scoreForm = document.querySelector(".add-score-form")
+    scoreForm.addEventListener('submit', createScore)
+    let addScore = false;
+    formContainer.style.display = "none";
+    addBtn.addEventListener("click", () => {
+        addScore = !addScore;
+        if (addScore) {
+            formContainer.style.display = "block";
+        } else {
+            formContainer.style.display = "none";
+        }
+    })
+}
 
 
 function checkForWinner() {
@@ -116,3 +133,9 @@ function checkForWinner() {
     // if won, send fetch request with info on score and board id and username
     // with data we get back, instantiate a new score and render/save to list   
 }
+
+addScoreForm();
+const scoreApi = new ScoreApi(BASE_URL)
+scoreApi.getScores();
+const boardApi = new BoardApi(BASE_URL)
+boardApi.getBoards();

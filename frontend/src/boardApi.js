@@ -20,5 +20,3 @@ function createBoardList(boards){
         })
 }
 
-const boardApi = new BoardApi(BASE_URL)
-boardApi.getBoards();

@@ -18,18 +18,21 @@ class Score {
     // const scoreList = document.getElementById("score-container");
 
     // make this one work
-    static sortScores = () => {
-        let ss = Score.allScores.sort(function(a,b) {
-            return a.moves - b.moves
-        })
-        // ss. iterate and add to DOM
-    }
+    // static sortScores = () => {
+    //     Score.allScores.sort(function(a,b) {
+    //         return a.moves - b.moves
+    //     })
+    //     // ss. iterate and add to DOM
+    // }
 
 
     renderScore() {
         console.log(this)
     }
+
+
 }
 // create - new score
 // update - update score when repeating a board
 
+sortScores();

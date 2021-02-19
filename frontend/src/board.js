@@ -17,6 +17,7 @@ class Board {
 
     handleLiClick = (event) => {   // rewrite as arrow function
         let click = event.target
+        currentBoardId = this.id
         this.loadNew();
         squares[0].innerHTML = `<img id="player" src="images/100-right.png">`
         this.renderDiscolored();
@@ -70,9 +71,4 @@ class Board {
         }
     }
 
-    
-
 }
-
-
-

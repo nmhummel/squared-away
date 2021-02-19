@@ -21,34 +21,35 @@ function createScoreList(scores){
     })
 }
 
-function saveScore(){
+function createScore(e){
     e.preventDefault()
     // const scoreInput = e.target.moves
     // const usernameInput = e.target.moves
     // const currentScore = scoreInput.value
-    // const currentUsername = usernameInput.value
+    const usernameEntered = document.getElementById("username-entered").value
 
-    let game = {
+
+    let finishedGame = {
         moves: score,
-        username: person,
-        board_id: this.board_id
+        username: usernameEntered, //or person
+        board_id: currentBoardId // or this.board_id
     }
+    debugger
     fetch(`${BASE_URL}/scores`, {
         method: "POST",
         headers: {
             'Accept': 'application/json',
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify(game)
+        body: JSON.stringify(finishedGame)
     })
     .then(resp => resp.json())
     .then(score => {
         let s = new Score(score.id, score.moves, score.username, score.board_id)
-        s.renderScore();
+        allScores.push(s);
+        console.log(s);
     })
     .catch((error) => { console.log(error.message) })
 }
    
-const scoreApi = new ScoreApi(BASE_URL)
-scoreApi.getScores();
 
