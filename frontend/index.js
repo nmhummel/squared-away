@@ -125,9 +125,10 @@ function checkForWinner() {
     } 
 }
 
+// immediate add is wonky, but a refresh sets it right.
+// adding 
 
-
-addScoreForm();
+//addScoreForm();
 const scoreApi = new ScoreApi(BASE_URL);
 scoreApi.getScores();
 const boardApi = new BoardApi(BASE_URL);

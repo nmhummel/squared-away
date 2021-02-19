@@ -20,6 +20,9 @@ function createScoreList(scores){
 }
 
 function createScore(score, username, currentBoardId){
+    //e.preventDefault()
+    //const usernameEntered = document.getElementById("username-entered").value
+
     let finishedGame = {
         moves: score,
         username: username, 
@@ -38,6 +41,7 @@ function createScore(score, username, currentBoardId){
     .then(score => {
         let s = new Score(score.moves, score.username, score.board_id)
         allScores.push(s);
+        //allScores.sortScores; // not sorting upon adding
         formContainer.style.display = "none";    
     })
     .catch((error) => { console.log(error.message) })
