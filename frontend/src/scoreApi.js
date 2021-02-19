@@ -15,17 +15,14 @@ class ScoreApi {
 function createScoreList(scores){  
     let ss = scores.sort((a,b) => { return a.moves - b.moves } )
     ss.forEach(element => {   
-        new Score(element.id, element.moves, element.username, element.board_id)
+        new Score(element.moves, element.username, element.board_id)
     })
 }
 
-function createScore(e){
-    e.preventDefault()
-    const usernameEntered = document.getElementById("username-entered").value
-
+function createScore(score, username, currentBoardId){
     let finishedGame = {
         moves: score,
-        username: usernameEntered, 
+        username: username, 
         board_id: currentBoardId 
     }
     debugger
@@ -39,9 +36,8 @@ function createScore(e){
     })
     .then(resp => resp.json())
     .then(score => {
-        let s = new Score(score.id, score.moves, score.username, score.board_id)
-        //allScores.push(s);
-        //allScores.sortScores; // not sorting upon adding
+        let s = new Score(score.moves, score.username, score.board_id)
+        allScores.push(s);
         formContainer.style.display = "none";    
     })
     .catch((error) => { console.log(error.message) })

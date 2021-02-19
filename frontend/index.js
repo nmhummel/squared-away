@@ -98,31 +98,30 @@ function movePlayerUp() {
     }
 }
 
-function addScoreForm() {
-    const addBtn = document.querySelector("#new-score-btn");
-    const scoreForm = document.querySelector(".add-score-form")
-    scoreForm.addEventListener('submit', createScore)
-    let addScore = false;
-    formContainer.style.display = "none";
-    addBtn.addEventListener("click", () => {
-        addScore = !addScore;
-        if (addScore) {
-            formContainer.style.display = "block";
-        } else {
-            formContainer.style.display = "none";
-        }
-    })
-}
+// function addScoreForm() {
+//     const addBtn = document.querySelector("#new-score-btn");
+//     const scoreForm = document.querySelector(".add-score-form")
+//     scoreForm.addEventListener('submit', createScore)
+//     let addScore = false;
+//     formContainer.style.display = "none";
+//     addBtn.addEventListener("click", () => {
+//         addScore = !addScore;
+//         if (addScore) {
+//             formContainer.style.display = "block";
+//         } else {
+//             formContainer.style.display = "none";
+//         }
+//     })
+// }
 
 function checkForWinner() {
     if (squares.every(cell => cell.innerHTML !== tardisCard)) {
         let username;
         setTimeout(() => {
             username = prompt("The TARDIS has been EXTERMINATED! Enter a name to save your score:")
+            //console.log(score, username, currentBoardId)
+            createScore(score, username, currentBoardId)
         }, 500 )
-        // usernameEntered = username
-        // Score.allScores.push(score, usernameEntered, currentBoardId) // ask jenn
-        // debugger
     } 
 }
 
