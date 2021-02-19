@@ -1,4 +1,3 @@
-// if cell # is in API for board, change color tile
 const BASE_URL = 'http://localhost:3000'
 const scoreList = document.getElementById("score-container");
 const boardList = document.getElementById('board-container');
@@ -6,7 +5,7 @@ const grid = document.querySelector('.grid')
 const squares = []
 let currentPosition;
 const tardisCard = `<img id="tardis" width=100 height=100 src="images/tardis-icon.png">`; // ???
-let regularTile; // darkred color ???
+let regularTile; 
 let currentBoardId;
 const formContainer = document.querySelector(".form-container");
 

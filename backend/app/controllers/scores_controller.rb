@@ -25,19 +25,6 @@ class ScoresController < ApplicationController
     end
   end
 
-  # PATCH/PUT /scores/1
-  def update
-    if score.update(score_params)
-      render json: score
-    else
-      render json: score.errors, status: :unprocessable_entity
-    end
-  end
-
-  # DELETE /scores/1
-  def destroy
-    score.destroy
-  end
 
   private
     # Use callbacks to share common setup or constraints between actions.

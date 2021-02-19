@@ -13,7 +13,7 @@ class Board {
         this.element.addEventListener('click', this.handleLiClick)
     }
 
-    handleLiClick = (event) => {   // rewrite as arrow function
+    handleLiClick = (event) => {  
         let click = event.target
         currentBoardId = this.id
         this.loadNew();
@@ -54,17 +54,4 @@ class Board {
             squares[index].innerHTML = tardisCard
         })    
     }
-    
-    // enterName() {
-    //     let person = prompt("Enter your user name");
-    //     let score = totalMoves
-
-    //     if (person == null || person == "" || score == 0) {
-    //         txt = "Score not saved.";
-    //     } else {
-    //         txt = "Great job," + person + "! Score was saved.";
-    //         saveScore();
-    //     }
-    // }
-
 }
