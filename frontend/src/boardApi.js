@@ -8,6 +8,7 @@ class BoardApi {
         fetch(this.baseUrl)
         .then(resp => resp.json())
         .then(boards => createBoardList(boards))         
+        .catch((error) => { console.log(error.message) })
     }
 }
 
@@ -17,6 +18,6 @@ function createBoardList(boards){
     bs.forEach(element => {   
         let b = new Board(element.id, element.discolored)
         b.addToDom()
-        })
+    })
 }
 

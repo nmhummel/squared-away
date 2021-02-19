@@ -28,7 +28,7 @@ body {
     text-align: center;
     position:sticky;
     top: 0;
-    background-color: lightslategrey;
+    background-color: rgb(132, 187, 243);
 }
 
 /* parent flex box */
@@ -75,7 +75,7 @@ TREAD CAREFULLY!!!
     display: flex;
     flex-wrap: nowrap;
     flex-direction: column;
-    background-color: lightslategrey;
+    background-color: rgb(132, 187, 243);
     outline: 4px solid white;
     color: darkred;
     overflow-y: auto;
@@ -92,7 +92,7 @@ TREAD CAREFULLY!!!
     display: flex;
     flex-wrap: nowrap;
     flex-direction: column;
-    background-color: lightslategrey;
+    background-color: rgb(132, 187, 243);
     outline: 4px solid white;
     align-content: center;
     overflow-y: auto;

@@ -12,8 +12,7 @@ class ScoreApi {
     }
 }
 
-function createScoreList(scores){
-    //debugger    
+function createScoreList(scores){  
     let ss = scores.sort((a,b) => { return a.moves - b.moves } )
     ss.forEach(element => {   
         new Score(element.id, element.moves, element.username, element.board_id)
@@ -41,9 +40,9 @@ function createScore(e){
     .then(resp => resp.json())
     .then(score => {
         let s = new Score(score.id, score.moves, score.username, score.board_id)
-        allScores.push(s);
+        //allScores.push(s);
         //allScores.sortScores; // not sorting upon adding
-        console.log(s);
+        formContainer.style.display = "none";    
     })
     .catch((error) => { console.log(error.message) })
 }

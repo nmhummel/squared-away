@@ -8,6 +8,7 @@ let currentPosition;
 const tardisCard = `<img id="tardis" width=100 height=100 src="images/tardis-icon.png">`; // ???
 let regularTile; // darkred color ???
 let currentBoardId;
+const formContainer = document.querySelector(".form-container");
 
 function createBoard() {
     for (let i = 1; i < 26; i++) {
@@ -57,8 +58,7 @@ function movePlayerRight() {
         squares[currentPosition].innerHTML = `<img id="player" src="images/100-right.png">`
         oldSquare.innerHTML = ""    
         score += 1
-        checkForWinner()
-        //document.getElementById(`cell-${currentPosition}`).style.color = "darkred"  
+        //checkForWinner()
     }
 }
 
@@ -70,7 +70,7 @@ function movePlayerLeft() {
         squares[currentPosition].innerHTML = `<img id="player" src="images/100-left.png">`
         oldSquare.innerHTML = ""
         score += 1
-        checkForWinner()
+        //checkForWinner()
     }
 } 
 
@@ -82,7 +82,7 @@ function movePlayerDown() {
         squares[currentPosition].innerHTML = `<img id="player" src="images/100-down.png">`
         oldSquare.innerHTML = ""
         score += 1
-        checkForWinner()
+        //checkForWinner()
     }
 }
 
@@ -94,13 +94,12 @@ function movePlayerUp() {
         squares[currentPosition].innerHTML = `<img id="player" src="images/100-down.png">`
         oldSquare.innerHTML = ""
         score += 1
-        checkForWinner()
+        //checkForWinner()
     }
 }
 
 function addScoreForm() {
     const addBtn = document.querySelector("#new-score-btn");
-    const formContainer = document.querySelector(".form-container");
     const scoreForm = document.querySelector(".add-score-form")
     scoreForm.addEventListener('submit', createScore)
     let addScore = false;
@@ -114,7 +113,6 @@ function addScoreForm() {
         }
     })
 }
-
 
 function checkForWinner() {
     if (squares.every(cell => cell.innerHTML !== tardisCard)) {
@@ -130,7 +128,7 @@ function checkForWinner() {
 }
 
 addScoreForm();
-const scoreApi = new ScoreApi(BASE_URL)
+const scoreApi = new ScoreApi(BASE_URL);
 scoreApi.getScores();
-const boardApi = new BoardApi(BASE_URL)
+const boardApi = new BoardApi(BASE_URL);
 boardApi.getBoards();

@@ -7,11 +7,9 @@ class Board {
         this.id = id
         this.discolored = discolored
         Board.allBoards.push(this)
-        console.log(this)
 
         this.element = document.createElement('li')
         this.element.className = `side-list`
-        
         this.element.addEventListener('click', this.handleLiClick)
     }
 
@@ -22,7 +20,6 @@ class Board {
         squares[0].innerHTML = `<img id="player" src="images/100-right.png">`
         this.renderDiscolored();
         alert(`Board #${this.id} loaded`)
-        console.log("CLICK", click)
     } 
 
     loadNew() {
@@ -47,7 +44,6 @@ class Board {
 
     addToDom() {
         boardList.append(this.renderList())
-
     }
 
     renderDiscolored() {
