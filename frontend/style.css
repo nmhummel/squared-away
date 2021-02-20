@@ -21,6 +21,7 @@ body {
     font-size: 35px;
     text-align: center;
     align-content: center;
+    vertical-align: middle;
 }
 
 .dark-text {
@@ -41,7 +42,7 @@ body {
     justify-content: center;
     align-items: stretch;
     align-content: center;
-    top: 5%;
+    top: 0%;
     position: relative;
 }
 
@@ -81,7 +82,8 @@ TREAD CAREFULLY!!!
     .grid div {
         height: 100px;
         width: 100px;
-        align-items: ce;
+        align-items: center;
+        border: 1px dotted gray;
     }
 
     
@@ -129,6 +131,28 @@ TREAD CAREFULLY!!!
     color:darkred;
 } 
 
-/*alert banners*/
+/* play button */
+button {
+    background-color: #003B6F;
+    border-radius: 0px 0px 0px 0px;
+    border: 1px solid white;
+    color: darkgray;
+    padding: 10px 10px;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+}
+
+#myAudio {
+    background-color: #003B6F;
+    border-radius: 0px 0px 0px 0px;
+    border: 1px solid white;
+    color: darkgray;
+    padding: 5px 5px;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    
+}
 
 

@@ -111,3 +111,8 @@ function checkForWinner() {
     } 
 }
 
+let x = document.getElementById("myAudio");
+
+function playAudio() {
+  x.play();
+}

@@ -7,14 +7,17 @@
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-<br>
+    <br>
 <p class="light-text"><img src="images/dalek-clearbg.png" width=75px, height=75px>
     Collect all the Tardis in the fewest moves possible!
 <img src="images/tardis-icon.png" width=75px, height=75px></p>
 
 <div id = "total-moves">
 </div>
-<br>
+<audio id="myAudio">
+    <source src="sounds/exterminate.mp3" type="audio/mpeg">
+</audio><br>
+<center><button onclick="playAudio()" type="button">EXTERMINATE!</button></center>
 
 <div class = "all-boxes">
     <div id = "score-container">
@@ -29,6 +32,8 @@
     </div>
 
 </div>
+
+
 
     <script src="src/boardApi.js" type="text/javascript"></script>
     <script src="src/scoreApi.js" type="text/javascript"></script>
