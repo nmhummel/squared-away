@@ -1,3 +1,5 @@
+/* //= require alert_message */
+
 * {
     padding: 0;
     margin: 0;
@@ -126,3 +128,7 @@ TREAD CAREFULLY!!!
     align-content: center;
     color:darkred;
 } 
+
+/*alert banners*/
+
+

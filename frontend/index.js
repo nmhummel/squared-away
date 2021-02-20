@@ -10,6 +10,7 @@ const tardisCard = `<img id="tardis" src="images/tardis-icon.png">`;
 let regularTile; 
 let currentBoardId;
 
+
 function createBoard() {
     for (let i = 1; i < 26; i++) {
     const square = document.createElement('div')
@@ -109,6 +110,4 @@ function checkForWinner() {
         }, 500 )
     } 
 }
-
-
 
