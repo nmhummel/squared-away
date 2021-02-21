@@ -9,7 +9,15 @@ let currentPosition;
 const tardisCard = `<img id="tardis" src="images/tardis-icon.png">`; 
 let regularTile; 
 let currentBoardId;
+let modalBtn = document.querySelector('.modal-btn')
+let modalBg = document.querySelector('.modal-bg')
+let modalBtn2 = document.querySelector('.modal-btn2')
+let modalBg2 = document.querySelector('.modal-bg2')
 
+let x = document.getElementById("myAudio");
+function playAudio() {
+  x.play();
+}
 
 function createBoard() {
     for (let i = 1; i < 26; i++) {
@@ -111,8 +119,28 @@ function checkForWinner() {
     } 
 }
 
-let x = document.getElementById("myAudio");
 
-function playAudio() {
-  x.play();
-}
+
+
+
+// const usernameBtn = document.querySelector(".username")
+// let username;
+// function checkForWinner() {
+//     if (squares.every(cell => cell.innerHTML !== tardisCard)) {
+//         setTimeout(modalGo, 500)
+//             //username = prompt("The TARDIS has been EXTERMINATED! Enter a name to save your score:")
+//     }
+// } 
+
+// function modalGo () {
+//     modalBg2.classList.add('bg-active');
+//     submitBtn.addEventListener("submit", () => {
+//         createScore(score, username, currentBoardId)
+//         modalBg2.classList.remove('bg-active')
+//     })
+// }
+  
+
+// submitBtn.addEventListener("submit", () => {
+//     modalBg2.classList.remove('bg-active')
+// })

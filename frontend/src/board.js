@@ -8,9 +8,10 @@ class Board {
         this.discolored = discolored
         Board.allBoards.push(this)
 
-        this.element = document.createElement('li')
-        this.element.className = `side-list`
+        this.element = document.createElement('button')
+        this.element.className = `modal-btn`
         this.element.addEventListener('click', this.handleLiClick)
+     
     }
 
     handleLiClick = () => {  
@@ -18,7 +19,8 @@ class Board {
         this.loadNew();
         squares[0].innerHTML = `<img id="player" src="images/100-right.png">`
         this.renderDiscolored();
-        alert(`Board #${this.id} loaded`)
+        modalBg.classList.add('bg-active')
+        modalBg.innerHTML =`Board #${this.id} loading.<br>Get ready to play!`
     } 
 
     loadNew() {
@@ -33,6 +35,7 @@ class Board {
                 sq.innerHTML = ""
             }
         })
+        setTimeout(() => modalBg.classList.remove('bg-active'), 2000)
     }
 
     renderList() {
@@ -53,3 +56,6 @@ class Board {
         })    
     }
 }
+
+
+

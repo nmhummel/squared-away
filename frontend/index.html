@@ -8,32 +8,47 @@
 </head>
 <body>
     <br>
-<p class="light-text"><img src="images/dalek-clearbg.png" width=75px, height=75px>
-    Collect all the Tardis in the fewest moves possible!
-<img src="images/tardis-icon.png" width=75px, height=75px></p>
-
-<div id = "total-moves">
-</div>
-<audio id="myAudio">
-    <source src="sounds/exterminate.mp3" type="audio/mpeg">
-</audio><br>
-<center><button onclick="playAudio()" type="button">EXTERMINATE!</button></center>
+    <center><table style="border: 0px; align-content: center;">
+    <tr>
+        <td style="padding: 2px 2px 2px 2px;"><img src="images/dalek-clearbg.png" width=100px, height=100px></td>
+        <td><p class="light-text">Collect all the Tardis in the fewest moves possible!<br>Use your arrow keys to move the Dalek around the board.</td>
+        <td><img src="images/tardis-icon.png" width=100px, height=100px></p></td>
+    </tr>
+    </table>
+    
+    <div id = "total-moves">
+    </div>
+</center>
 
 <div class = "all-boxes">
     <div id = "score-container">
         <div class="dark-text">Top Scores</div>
     </div> 
-
     <div class="grid">
     </div>
-
     <div id="board-container">
         <div class="dark-text">Available Boards</div>
     </div>
-
 </div>
 
+<audio id="myAudio">
+    <source src="sounds/exterminate.mp3" type="audio/mpeg">
+</audio><br>
+<center><button onclick="playAudio()" type="button">EXTERMINATE!</button></center>
 
+<div class="modal-bg">
+    <div class="modal">
+    </div>
+</div> 
+
+<div class="modal-bg2">
+    <div class="modal2">
+        <h2>The TARDIS has been EXTERMINATED!<br>Enter a name to save your score:"</h2>
+        <label for="username" class="username">Name: </label>
+        <input type="text" name="username">
+        <button id="submit-btn">SUBMIT</button>
+    </div>
+</div>
 
     <script src="src/boardApi.js" type="text/javascript"></script>
     <script src="src/scoreApi.js" type="text/javascript"></script>

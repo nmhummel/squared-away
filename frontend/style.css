@@ -135,7 +135,7 @@ TREAD CAREFULLY!!!
 button {
     background-color: #003B6F;
     border-radius: 0px 0px 0px 0px;
-    border: 1px solid white;
+    /* border: 2px solid white; */
     color: darkgray;
     padding: 10px 10px;
     text-align: center;
@@ -152,7 +152,90 @@ button {
     text-align: center;
     display: inline-block;
     font-size: 16px;
-    
 }
 
 
+.modal-bg {
+    position: fixed;
+    font-family: fantasy;
+    font-size: 20px;
+    top: 23%;
+    left: 43%;
+    height: 200px;
+    width: 300px;
+    padding: 15px 15px 15px 15px;
+    background-color: rgba(132, 165, 241, 0.657);
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s opacity 0,5s;
+}
+
+
+.modal-bg2 {
+    position: fixed;
+    font-family: fantasy;
+    font-size: 20px;
+    top: 23%;
+    left: 43%;
+    height: 200px;
+    width: 300px;
+    padding: 15px 15px 15px 15px;
+    background-color: rgba(132, 165, 241, 0.657);
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s opacity 0,5s;
+}
+
+.modal {
+    position: relative;
+    background-color: white;
+    padding: 20px 20px 20px 20px;
+    font-family: fantasy;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+.modal2 {
+    position: relative;
+    background-color: white;
+    padding: 20px 20px 20px 20px;
+    font-family: fantasy;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+}
+
+.bg-active {
+    visibility: visible;
+    opacity: 1;
+}
+
+
+.modal-btn {
+    border-radius: 0px 0px 0px 0px;
+    /* border: 2px solid white; */
+    color: darkred;
+    background-color: rgb(132, 187, 243);
+    padding: 2px 2px 2px 100px;
+    text-align: left;
+    font-size: 16px;
+    cursor: pointer;
+    width: auto;
+    border: 0px;
+}
+
+/* #submit-btn {
+    background-color: none;
+    border: 0px;
+    color: black;
+} */
