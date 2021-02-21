@@ -8,7 +8,7 @@ class BoardApi {
         fetch(this.baseUrl)
         .then(resp => resp.json())
         .then(boards => createBoardList(boards))         
-        .catch((error) => { console.log(error.message) })
+        .catch((error) => { alert(error.message) })
     }
 }
 

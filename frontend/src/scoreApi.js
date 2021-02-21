@@ -8,7 +8,7 @@ class ScoreApi {
         fetch(this.baseUrl)
         .then(resp => resp.json())
         .then(scores => createScoreList(scores))
-        .catch((error) => { console.log(error.message) })
+        .catch((error) => { alert(error.message) })
     }
 }
 
@@ -39,7 +39,7 @@ function createScore(score, username, currentBoardId){
         Score.allScores.push(s);
         Score.sortScores();       
     })
-    .catch((error) => { console.log(error.message) })
+    .catch((error) => { alert(error.message) })
 }
    
 

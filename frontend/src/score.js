@@ -7,7 +7,7 @@ class Score {
         this.username = username
         this.board_id = board_id
         Score.allScores.push(this)
-        
+        console.log(this)
         this.element = document.createElement('li')
         this.element.className = `side-list`
         this.element.innerHTML = `<b>${moves}</b> by <i>${username}</i> on Board #${board_id}`
