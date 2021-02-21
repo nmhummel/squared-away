@@ -11,7 +11,6 @@ class Board {
         this.element = document.createElement('button')
         this.element.className = `modal-btn`
         this.element.addEventListener('click', this.handleLiClick)
-     
     }
 
     handleLiClick = () => {  
