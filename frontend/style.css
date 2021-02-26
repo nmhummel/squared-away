@@ -135,7 +135,6 @@ TREAD CAREFULLY!!!
 button {
     background-color: #003B6F;
     border-radius: 0px 0px 0px 0px;
-    /* border: 2px solid white; */
     color: darkgray;
     padding: 10px 10px;
     text-align: center;
@@ -154,27 +153,8 @@ button {
     font-size: 16px;
 }
 
-
+/* load board modal */
 .modal-bg {
-    position: fixed;
-    font-family: fantasy;
-    font-size: 20px;
-    top: 23%;
-    left: 43%;
-    height: 200px;
-    width: 300px;
-    padding: 15px 15px 15px 15px;
-    background-color: rgba(132, 165, 241, 0.657);
-    display: flex;
-    justify-content: center;
-    align-items: center; 
-    visibility: hidden;
-    opacity: 0;
-    transition: visibility 0s opacity 0,5s;
-}
-
-
-.modal-bg2 {
     position: fixed;
     font-family: fantasy;
     font-size: 20px;
@@ -203,6 +183,37 @@ button {
     flex-direction: column;
 }
 
+.modal-btn {
+    border-radius: 0px 0px 0px 0px;
+    color: darkred;
+    background-color: rgb(132, 187, 243);
+    padding: 2px 2px 2px 100px;
+    text-align: left;
+    font-size: 16px;
+    cursor: pointer;
+    width: auto;
+    border: 0px;
+}
+
+/* save score modal */
+.modal-bg2 {
+    position: fixed;
+    font-family: fantasy;
+    font-size: 20px;
+    top: 23%;
+    left: 40%;
+    height: 200px;
+    width: 400px;
+    padding: 15px 15px 15px 15px;
+    background-color: rgba(139, 0, 0, 0.794);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center; 
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s opacity 0,5s;
+}
 
 .modal2 {
     position: relative;
@@ -215,23 +226,20 @@ button {
     flex-direction: column;
 }
 
+.modal-btn2 {
+    background-color: #003B6F;
+    border-radius: 0px 0px 0px 0px;
+    color: darkgray;
+    padding: 2px 2px 2px 2px;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+
+}
+
 .bg-active {
     visibility: visible;
     opacity: 1;
-}
-
-
-.modal-btn {
-    border-radius: 0px 0px 0px 0px;
-    /* border: 2px solid white; */
-    color: darkred;
-    background-color: rgb(132, 187, 243);
-    padding: 2px 2px 2px 100px;
-    text-align: left;
-    font-size: 16px;
-    cursor: pointer;
-    width: auto;
-    border: 0px;
 }
 
 /* #submit-btn {

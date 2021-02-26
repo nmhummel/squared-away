@@ -9,8 +9,11 @@ let currentPosition;
 const tardisCard = `<img id="tardis" src="images/tardis-icon.png">`; 
 let regularTile; 
 let currentBoardId;
-let modalBtn = document.querySelector('.modal-btn')
-let modalBg = document.querySelector('.modal-bg')
+const modalBtn = document.querySelector('.modal-btn')
+const modalBg = document.querySelector('.modal-bg')
+const modalBtn2 = document.querySelector('.modal-btn2')
+const modalBg2 = document.querySelector('.modal-bg2')
+const scoreForm = document.getElementById('score-submit-form')
 
 let x = document.getElementById("myAudio");
 function playAudio() {
@@ -109,11 +112,25 @@ function movePlayerUp() {
 
 function checkForWinner() {
     if (squares.every(cell => cell.innerHTML !== tardisCard)) {
-        let username;
-        setTimeout(() => {
-            username = prompt("The TARDIS has been EXTERMINATED! Enter a name to save your score:")
-            createScore(score, username, currentBoardId)
-        }, 500 )
+       setTimeout(() => { 
+        modalBg2.classList.add('bg-active')
+        modalBg2.innerHTML = `
+        The TARDIS has been EXTERMINATED!<br>Enter a name to save your score:<br><br>
+        <form id="score-submit-form">
+            <input type="text" id="username-input"><br><br>
+            <input type="submit" value='enter score' class="modal-btn2"/>
+        </form>
+        `
+        
+        scoreForm.addEventListener("submit", handleSubmit)
+      }, 500 )
     } 
 }
 
+function handleSubmit(event) {
+    event.preventDefault()
+    let username = document.getElementById('username-input').value
+    createScore(score, username, currentBoardId)
+    event.target.reset()
+    modalBg2.classList.remove('bg-active')
+}

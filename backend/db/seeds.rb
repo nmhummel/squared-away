@@ -34,9 +34,21 @@ Board.create([
 ])
 
 Score.create([
-    {moves: 14, username: "SeedTester", board_id: 4},
-    {moves: 22, username: "SeedTester", board_id: 1},
+    {moves: 7, username: "nattywoohoo", board_id: 1},
+    {moves: 7, username: "nmhummel", board_id: 1},
+    {moves: 8, username: "daphne", board_id: 3},
+    {moves: 7, username: "tony", board_id: 1},
+    {moves: 7, username: "clairemodal", board_id: 1},
+    {moves: 9, username: "nattywoohoo", board_id: 2},
+    {moves: 10, username: "hoorayforme", board_id: 24},
+    {moves: 9, username: "TheDoctor", board_id: 2},
+    {moves: 9, username: "DoctorWho", board_id: 6},
+    {moves: 10, username: "DalekDoctor", board_id: 11},
+    {moves: 10, username: "RoseTyler", board_id: 7},
+    {moves: 18, username: "TheDoctor", board_id: 24},
+    {moves: 19, username: "RoseTyler", board_id: 23},
+    {moves: 18, username: "DoctorWho", board_id: 22},
+    {moves: 18, username: "Number11", board_id: 25},
+    {moves: 20, username: "HallofFame", board_id: 25},
     {moves: 21, username: "SeedTester", board_id: 3},
-    {moves: 18, username: "SeedTester", board_id: 13},
-    {moves: 4, username: "SeedTester", board_id: 20}
 ])
