@@ -13,7 +13,6 @@ const modalBtn = document.querySelector('.modal-btn')
 const modalBg = document.querySelector('.modal-bg')
 const modalBtn2 = document.querySelector('.modal-btn2')
 const modalBg2 = document.querySelector('.modal-bg2')
-const scoreForm = document.getElementById('score-submit-form')
 
 let x = document.getElementById("myAudio");
 function playAudio() {
@@ -59,8 +58,6 @@ document.addEventListener("keyup", function(e) {
     }
 })
 
-// if square is empty and player touches on it
-//<div id = "cell-1"></div>
 let playerStart = document.getElementById('cell-1');
 playerStart.innerHTML = `<img id="player" src="images/100-right.png">`;
 currentPosition = 0;
@@ -113,6 +110,7 @@ function movePlayerUp() {
 function checkForWinner() {
     if (squares.every(cell => cell.innerHTML !== tardisCard)) {
        setTimeout(() => { 
+        
         modalBg2.classList.add('bg-active')
         modalBg2.innerHTML = `
         The TARDIS has been EXTERMINATED!<br>Enter a name to save your score:<br><br>
@@ -121,7 +119,7 @@ function checkForWinner() {
             <input type="submit" value='enter score' class="modal-btn2"/>
         </form>
         `
-        
+        const scoreForm = document.getElementById('score-submit-form')
         scoreForm.addEventListener("submit", handleSubmit)
       }, 500 )
     } 
@@ -134,3 +132,6 @@ function handleSubmit(event) {
     event.target.reset()
     modalBg2.classList.remove('bg-active')
 }
+
+
+// if square is empty and player touches on it to get to Tardis, populate Tardis in that square

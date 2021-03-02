@@ -33,7 +33,7 @@ class Board {
             else {
                 sq.innerHTML = ""
             }
-        })
+        }) 
         setTimeout(() => modalBg.classList.remove('bg-active'), 2000)
     }
 
