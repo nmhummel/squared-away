@@ -1,4 +1,4 @@
-const BASE_URL = 'http://localhost:3000'
+const BASE_URL = 'https://squared-away.netlify.app/'
 const boardApi = new BoardApi(BASE_URL);
 const scoreApi = new ScoreApi(BASE_URL);
 const scoreList = document.getElementById("score-container");
