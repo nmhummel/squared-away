@@ -37,6 +37,7 @@ function createScore(score, username, currentBoardId){
     .then(score => {
         let s = new Score(score.moves, score.username, score.board_id)
         Score.allScores.push(s);
+        console.log(Score.allScores)
         Score.sortScores();       
     })
     .catch((error) => { alert(error.message) })

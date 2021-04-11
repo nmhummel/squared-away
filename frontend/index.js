@@ -19,6 +19,18 @@ function playAudio() {
   x.play();
 }
 
+// const sortButton = document.getElementById("sortButton")
+// const scoreFilter = document.getElementById("filterScore")
+// sortButton.addEventListener("click", filterScores)
+// function filterScores() {
+//     let goober = Score.allScores.filter(score => score.moves > scoreFilter.value)
+//     console.log(goober)
+//     scoreList.innerHTML = `<div class="dark-text">Top Scores</div>`
+//     goober.forEach((score) => {
+//          scoreList.appendChild(score.element)
+//     })
+// }
+
 function createBoard() {
     for (let i = 1; i < 26; i++) {
     const square = document.createElement('div')
